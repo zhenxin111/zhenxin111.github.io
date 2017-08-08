@@ -95,7 +95,7 @@
 <meta property="og:url" content="http://zhenxin1994.com/2017/06/29/2017-06-29-css-time/index.html">
 <meta property="og:site_name" content="绵绵小站">
 <meta property="og:description" content="项目问题 更新上传CSS文件或JS文件后，安卓手机浏览器刷新，页面样式没有改变">
-<meta property="og:updated_time" content="2017-08-05T12:30:06.000Z">
+<meta property="og:updated_time" content="2017-08-08T15:59:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="引用静态资源时加上时间戳，处理浏览器缓存问题">
 <meta name="twitter:description" content="项目问题 更新上传CSS文件或JS文件后，安卓手机浏览器刷新，页面样式没有改变">
@@ -423,7 +423,9 @@
 </blockquote>
 <a id="more"></a>
 <h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><p>利用PHP语言，在引用静态资源时加上时间戳<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/style.css?time=&lt;?php echo date(&quot;Ymd&quot;,time())?&gt;&quot;/&gt;</div></pre></td></tr></table></figure></p>
-<h2 id="八种浏览器缓存"><a href="#八种浏览器缓存" class="headerlink" title="八种浏览器缓存"></a>八种浏览器缓存</h2><blockquote>
+<p><br></p>
+<h2 id="八种浏览器缓存"><a href="#八种浏览器缓存" class="headerlink" title="八种浏览器缓存"></a>八种浏览器缓存</h2><hr>
+<blockquote>
 <p>浏览器缓存（Browser Caching）是浏览器端保存数据用于快速读取或避免重复资源请求的优化机制，有效的缓存使用可以避免重复的网络请求和浏览器快速地读取本地数据，整体上加速网页展示给用户。浏览器端缓存的机制种类较多，总体归纳为八种：</p>
 </blockquote>
 <h3 id="http缓存"><a href="#http缓存" class="headerlink" title="http缓存"></a><strong>http缓存</strong></h3><p>http缓存是基于HTTP协议的浏览器文件级缓存机制。即针对文件的重复请求情况下，浏览器可以根据协议头中<strong>expires、etag、last-modified等</strong>响应头来判断从服务器端请求文件还是从本地读取文件。</p>

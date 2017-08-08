@@ -95,7 +95,7 @@
 <meta property="og:url" content="http://zhenxin1994.com/2017/07/19/2017-07-19-利用存储过程优化复杂的数据库操作/index.html">
 <meta property="og:site_name" content="绵绵小站">
 <meta property="og:description" content="参考其他文章列举存储过程的优劣，据此分析目前智慧电站总项目下，还有那些地方的数据库操作，适合使用存储过程进行优化。">
-<meta property="og:updated_time" content="2017-08-05T12:30:06.000Z">
+<meta property="og:updated_time" content="2017-08-08T15:58:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用存储过程优化复杂的数据库操作">
 <meta name="twitter:description" content="参考其他文章列举存储过程的优劣，据此分析目前智慧电站总项目下，还有那些地方的数据库操作，适合使用存储过程进行优化。">
@@ -419,11 +419,14 @@
 
       
         <p>参考其他文章列举存储过程的优劣，据此分析目前智慧电站总项目下，还有那些地方的数据库操作，适合使用存储过程进行优化。<br><a id="more"></a></p>
-<h2 id="存储过程是什么？"><a href="#存储过程是什么？" class="headerlink" title="存储过程是什么？"></a>存储过程是什么？</h2><blockquote>
+<p><br></p>
+<h2 id="存储过程是什么？"><a href="#存储过程是什么？" class="headerlink" title="存储过程是什么？"></a>存储过程是什么？</h2><hr>
+<blockquote>
 <p>储存程序 (Stored Procedure)，又可称预储程序或者存储过程，是一种在数据库中存储复杂程序，以便外部程序调用的一种数据库对象，它可以视为数据库中的一种函数或子程序。——维基百科</p>
 </blockquote>
-<p>可以理解为数据库中的函数过程。</p>
-<h2 id="存储过程的优势"><a href="#存储过程的优势" class="headerlink" title="存储过程的优势"></a>存储过程的优势</h2><p>就我在项目中实际使用来说，当前台处理涉及多条数据库查询语句操作，并出现临时表需整合多个表筛选多余信息的情况下使用到了存储过程。并且发现在数据库中写一个存储过程，web端、移动端以及桌面端都可以调用。</p>
+<p>可以理解为数据库中的函数过程。<br><br></p>
+<h2 id="存储过程的优势"><a href="#存储过程的优势" class="headerlink" title="存储过程的优势"></a>存储过程的优势</h2><hr>
+<p>就我在项目中实际使用来说，当前台处理涉及多条数据库查询语句操作，并出现临时表需整合多个表筛选多余信息的情况下使用到了存储过程。并且发现在数据库中写一个存储过程，web端、移动端以及桌面端都可以调用。</p>
 <blockquote>
 <p>引用自<a href="https://docs.microsoft.com/zh-cn/sql/relational-databases/stored-procedures/stored-procedures-database-engine" target="_blank" rel="external">微软文档-存储过程（数据库引擎）</a></p>
 </blockquote>
@@ -437,12 +440,16 @@
 <h3 id="代码的重复使用"><a href="#代码的重复使用" class="headerlink" title="代码的重复使用"></a>代码的重复使用</h3><p>任何重复的数据库操作的代码都非常适合于在过程中进行封装。这消除了不必要地重复编写相同的代码、降低了代码不一致性，并且允许拥有所需权限的任何用户或应用程序访问和执行代码。</p>
 <h3 id="更容易维护"><a href="#更容易维护" class="headerlink" title="更容易维护"></a>更容易维护</h3><p>在客户端应用程序调用过程并且将数据库操作保持在数据层中时，对于基础数据库中的任何更改，只有过程是必须更新的。 应用程序层保持独立，并且不必知道对数据库布局、关系或进程的任何更改的情况。</p>
 <h3 id="改进的性能"><a href="#改进的性能" class="headerlink" title="改进的性能"></a>改进的性能</h3><p>默认情况下，在首次执行过程时将编译过程，并且创建一个执行计划，供以后的执行重复使用。 因为查询处理器不必创建新计划，所以，它通常用更少的时间来处理过程。</p>
-<h2 id="存储过程的劣势"><a href="#存储过程的劣势" class="headerlink" title="存储过程的劣势"></a>存储过程的劣势</h2><p>很多文章提到存储过程的可移植性差：</p>
+<p><br></p>
+<h2 id="存储过程的劣势"><a href="#存储过程的劣势" class="headerlink" title="存储过程的劣势"></a>存储过程的劣势</h2><hr>
+<p>很多文章提到存储过程的可移植性差：</p>
 <blockquote>
 <p>由于存储过程将应用程序绑定到 SQL Server，因此使用存储过程封装业务逻辑将限制应用程序的可移植性。如果应用程序的可移植性在您的环境中非常重要，则将业务逻辑封装在不特定于 RDBMS 的中间层中可能是一个更佳的选择。</p>
 </blockquote>
 <p>但目前项目，是确认绑定在SQL Server数据库中，不会轻易更改，可移植性不是考虑的重点。</p>
-<h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>依据存储过程的优势，目前可以封装成存储过程的几个数据处理：</p>
+<p><br></p>
+<h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><hr>
+<p>依据存储过程的优势，目前可以封装成存储过程的几个数据处理：</p>
 <ul>
 <li>订餐系统中的提交操作<br>【遇到问题】之前在做这一功能时，就受限于提交多个表增、删、改的顺序以及完成状态，利用php多次判断数据操作的执行状态的方式不仅繁琐，而且进行到其中一步发生错误，还需要把前面的数据操作撤销，不影响该次订餐操作性质。<br>【解决当时】封装为存储过程，利用数据库本身的逻辑控制，一次性提交执行一次订餐提交操作。</li>
 </ul>
