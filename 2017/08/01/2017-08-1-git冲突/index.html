@@ -88,17 +88,17 @@
 
 
 
-<meta name="description" content="使用git对多人参与的项目进行版本控制时，遇到pull过程发生冲突，本地文件被覆盖的情况；">
+<meta name="description" content="文章记录使用git遇到的问题，以及解决方案。">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git日常使用问题总结">
 <meta property="og:url" content="http://zhenxin1994.com/2017/08/01/2017-08-1-git冲突/index.html">
 <meta property="og:site_name" content="绵绵小站">
-<meta property="og:description" content="使用git对多人参与的项目进行版本控制时，遇到pull过程发生冲突，本地文件被覆盖的情况；">
-<meta property="og:updated_time" content="2017-08-08T05:39:52.000Z">
+<meta property="og:description" content="文章记录使用git遇到的问题，以及解决方案。">
+<meta property="og:updated_time" content="2017-08-08T15:35:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git日常使用问题总结">
-<meta name="twitter:description" content="使用git对多人参与的项目进行版本控制时，遇到pull过程发生冲突，本地文件被覆盖的情况；">
+<meta name="twitter:description" content="文章记录使用git遇到的问题，以及解决方案。">
 
 
 
@@ -418,16 +418,23 @@
       
 
       
-        <h2 id="使用git对多人参与的项目进行版本控制时，遇到pull过程发生冲突，本地文件被覆盖的情况；"><a href="#使用git对多人参与的项目进行版本控制时，遇到pull过程发生冲突，本地文件被覆盖的情况；" class="headerlink" title="使用git对多人参与的项目进行版本控制时，遇到pull过程发生冲突，本地文件被覆盖的情况；"></a>使用git对多人参与的项目进行版本控制时，遇到pull过程发生冲突，本地文件被覆盖的情况；</h2><a id="more"></a>
-<p>具体情况：<br>远程仓库中，存在a文件；<br>本地对a文件内容进行了删除增加修改；<br>git上传后，发现本地以及仓库中的a文件内容是远程仓库版本与本地版本的合并；</p>
+        <p>文章记录使用git遇到的问题，以及解决方案。<br><a id="more"></a></p>
+<h2 id="git文件添加："><a href="#git文件添加：" class="headerlink" title="git文件添加："></a>git文件添加：</h2><ul>
+<li>添加所有文件：<code>git add *</code></li>
+<li>添加单个文件：`git add “文件名”</li>
+</ul>
+<h2 id="名称太长的文件添加失败"><a href="#名称太长的文件添加失败" class="headerlink" title="名称太长的文件添加失败"></a>名称太长的文件添加失败</h2><p>git add时，名称太长的文件添加失败</p>
+<h2 id="pull冲突"><a href="#pull冲突" class="headerlink" title="pull冲突"></a>pull冲突</h2><p>使用git对多人参与的项目进行版本控制时，遇到pull过程发生冲突，本地文件被覆盖的情况；<br>具体情况：</p>
+<blockquote>
+<p>远程仓库中，存在a文件；<br>本地对a文件内容进行了删除增加修改；<br>git上传后，发现本地以及仓库中的a文件内容是远程仓库版本与本地版本的合并；</p>
+</blockquote>
 <p>多个文件出现此状况，不利于修改；</p>
 <h2 id="本地代码库版本回滚"><a href="#本地代码库版本回滚" class="headerlink" title="本地代码库版本回滚"></a>本地代码库版本回滚</h2><p>发生覆盖等错误时，解决方法为版本回退：<br>日志查看commit操作记录: <code>git log</code><br>版本回滚命令:<code>git reset --hard commit-id</code> <em>commit-id通过个git log命令获得</em></p>
-<h2 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h2><p>最新8版本太高报错<br>退回到4版本</p>
+<h2 id="安装node，使用npm配合hexo出错"><a href="#安装node，使用npm配合hexo出错" class="headerlink" title="安装node，使用npm配合hexo出错"></a>安装node，使用npm配合hexo出错</h2><p>最新node8版本太高报错，退回到版本4.*</p>
 <h2 id="备份hexo博客源码时，出现主题不能上传的情况"><a href="#备份hexo博客源码时，出现主题不能上传的情况" class="headerlink" title="备份hexo博客源码时，出现主题不能上传的情况"></a>备份hexo博客源码时，出现主题不能上传的情况</h2><ul>
 <li>删除根目录和主题目录下的.git文件夹</li>
 <li>修改根目录下的.gitignore文件为：<br><code>/.deploy_git</code><br><code>/public</code></li>
 </ul>
-<p>此处git扩展知识点：<br>添加所有文件：<code>git add *</code><br>添加单个文件：<code>git add &quot;文件名&quot;</code></p>
 
       
     </div>
@@ -639,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用git对多人参与的项目进行版本控制时，遇到pull过程发生冲突，本地文件被覆盖的情况；"><span class="nav-number">1.</span> <span class="nav-text">使用git对多人参与的项目进行版本控制时，遇到pull过程发生冲突，本地文件被覆盖的情况；</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地代码库版本回滚"><span class="nav-number">2.</span> <span class="nav-text">本地代码库版本回滚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装node"><span class="nav-number">3.</span> <span class="nav-text">安装node</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备份hexo博客源码时，出现主题不能上传的情况"><span class="nav-number">4.</span> <span class="nav-text">备份hexo博客源码时，出现主题不能上传的情况</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git文件添加："><span class="nav-number">1.</span> <span class="nav-text">git文件添加：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名称太长的文件添加失败"><span class="nav-number">2.</span> <span class="nav-text">名称太长的文件添加失败</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pull冲突"><span class="nav-number">3.</span> <span class="nav-text">pull冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地代码库版本回滚"><span class="nav-number">4.</span> <span class="nav-text">本地代码库版本回滚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装node，使用npm配合hexo出错"><span class="nav-number">5.</span> <span class="nav-text">安装node，使用npm配合hexo出错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备份hexo博客源码时，出现主题不能上传的情况"><span class="nav-number">6.</span> <span class="nav-text">备份hexo博客源码时，出现主题不能上传的情况</span></a></li></ol></div>
             
 
           </div>
