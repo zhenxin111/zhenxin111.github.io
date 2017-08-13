@@ -95,7 +95,7 @@
 <meta property="og:url" content="http://zhenxin1994.com/2017/08/12/2017-08-12-网易2018届前端开发笔试/index.html">
 <meta property="og:site_name" content="绵绵小站">
 <meta property="og:description" content="回忆整理内推笔试知识点，有机会再战啊">
-<meta property="og:updated_time" content="2017-08-12T16:06:16.000Z">
+<meta property="og:updated_time" content="2017-08-13T13:20:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网易2018届前端开发内推笔试">
 <meta name="twitter:description" content="回忆整理内推笔试知识点，有机会再战啊">
@@ -421,20 +421,45 @@
         <p>回忆整理内推笔试知识点，有机会再战啊<br><a id="more"></a></p>
 <h2 id="选择题部分（20题单选，一题2分）："><a href="#选择题部分（20题单选，一题2分）：" class="headerlink" title="选择题部分（20题单选，一题2分）："></a>选择题部分（20题单选，一题2分）：</h2><hr>
 <ul>
-<li>适配器</li>
-<li>JS中this的指向</li>
-<li>input元素type</li>
-<li>选择器中的伪元素</li>
-<li>二分法查找使用数据结构</li>
+<li><p>适配器<br>知识点：</p>
+<blockquote>
+<p>适配器模式（Adapter）是JS设计模式的一种。适配器就像一台接口转换机，不过它并非完全改变一个接口，它只是创建一个新的对象和函数，去适配现有对象或函数的接口，去兼容已存在在使用的代码。<br>带例子的参考：(JavaScript设计模式之适配器模式)[<a href="https://natee.gitbooks.io/javascript-design-patterns/content/adapter-pattern.html" target="_blank" rel="external">https://natee.gitbooks.io/javascript-design-patterns/content/adapter-pattern.html</a>]</p>
+</blockquote>
+</li>
+<li><p>JS中this的指向<br>选项有歧义，一眼看过去两三个选项都像对的，注意文字陷阱</p>
+</li>
+</ul>
+<p>选项：</p>
+<blockquote>
+<p>A 在函数定义时，this指向全局变量<br>B 在浏览器下的全局范围内，this指向全局对象<br>C 当对象调用函数或者方法时，this指向这个对象<br>D 在使用new实例化对象时，this指向这个实例对象</p>
+</blockquote>
+<p>A的<code>全局变量</code>名词错误；B的<code>全局范围</code>用词不准确，在任何函数体外部的全局范围？<br>知识点：<br>this指向的是，调用函数的那个对象。<br>分以下四种情况详细讨论this用法：</p>
+<pre><code>+ 情况一：直接函数调用
+</code></pre><p>非严格模式，this指向全局对象<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">&#125;</div><div class="line">test() === <span class="built_in">window</span>; <span class="comment">//输出结果是true</span></div></pre></td></tr></table></figure></p>
+<p>严格模式下，this未被执行的上下文环境定义，它默认为undefined<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;	</div><div class="line"><span class="meta">	"use strict"</span>;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">&#125;</div><div class="line">test() === <span class="literal">undefined</span>; <span class="comment">//输出结果是true</span></div></pre></td></tr></table></figure></p>
+<pre><code>+ 情况二：作为对象方法的调用
+</code></pre><p>函数作为方法被对象调用，this指向调用该函数的对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.x;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">x</span>: <span class="number">1994</span>&#125;;</div><div class="line">obj.y = test;</div><div class="line"><span class="built_in">console</span>.log(obj.y()); <span class="comment">// 1994</span></div></pre></td></tr></table></figure>
+<pre><code>+ 情况三：作为构造函数调用
+</code></pre><p>(秘密花园)[<a href="https://bonsaiden.github.io/JavaScript-Garden/zh/]中提到：如果函数倾向于和new关键词一块使用，则我们称这个函数是构造函数。在函数内部，this" target="_blank" rel="external">https://bonsaiden.github.io/JavaScript-Garden/zh/]中提到：如果函数倾向于和new关键词一块使用，则我们称这个函数是构造函数。在函数内部，this</a> 指向新创建的对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.x = <span class="number">1994</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> test();</div><div class="line"><span class="built_in">console</span>.log(obj.x); <span class="comment">// 1994</span></div></pre></td></tr></table></figure>
+<ul>
+<li>情况四：call 和 apply调用<br>call()函数和apply()函数是每个函数都有的方法，可以通过设置第一个参数，改变绑定到指定对象上；<br>apply()方法接受两个参数：第一个参数就表示改变后的调用这个函数的对象，第二个是参数数组（可以是Array的实例，也可以是arguments对象）<br>call()方法和apply()方法的区别在于接受参数的方式不同，对于call()方法来说，第一个参数不变，变化的是后面的参数必须逐个列举出来；</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">c,d</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.a+<span class="keyword">this</span>.b+c+d;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">1</span>&#125;;</div><div class="line"></div><div class="line">add.apply(obj, [<span class="number">1</span>,<span class="number">1</span>]); <span class="comment">// 1+1+1+1=4</span></div><div class="line"></div><div class="line">add.call(obj, <span class="number">2</span>, <span class="number">2</span>); <span class="comment">//  1+1+2+2=6</span></div></pre></td></tr></table></figure>
+<ul>
+<li>JS window对象的子对象包括</li>
+<li>string number bool三种类型互相并运算、或运算后的结果</li>
 <li>setTimeout的用法，时间设置为0时的特殊情况；输出顺序</li>
+<li>input元素type</li>
+<li>图片地址的匹配正则表达式</li>
+<li>二分法查找使用数据结构</li>
+<li>var a=[];typeof a;结果</li>
+<li>选择器中的伪元素</li>
 <li>不可能的出栈序列</li>
 <li>上亿个数中找出最小的20个数，用哪种排序</li>
-<li>var a=[];typeof a;结果</li>
-<li>JS window对象的子对象包括</li>
 <li>完全二叉树的层高和结点个数关系</li>
-<li>string number bool三种类型互相并运算、或运算后的结果</li>
 <li>链表操作的时间复杂度</li>
-<li>图片地址的匹配正则表达式</li>
 <li>进程死锁</li>
 <li>TCP协议拥塞控制</li>
 <li>进程和线程</li>
