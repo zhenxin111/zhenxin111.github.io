@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Apache," />
 
 
 
@@ -88,12 +88,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="绵绵小站">
-<meta property="og:url" content="http://zhenxin1994.com/categories/技术/Apache/index.html">
+<meta name="description" content="放假以来，服务器Apache二次崩掉了，不能再拖了，找bug解决；">
+<meta name="keywords" content="Apache">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Apache崩掉：修改每个进程的线程数参数ThreadsPerChild">
+<meta property="og:url" content="http://zhenxin1994.com/2017/08/14/2017-08-14-Apache崩掉：修改每个进程的线程数ThreadsPerChild /index.html">
 <meta property="og:site_name" content="绵绵小站">
+<meta property="og:description" content="放假以来，服务器Apache二次崩掉了，不能再拖了，找bug解决；">
+<meta property="og:updated_time" content="2017-08-14T11:02:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="绵绵小站">
+<meta name="twitter:title" content="Apache崩掉：修改每个进程的线程数参数ThreadsPerChild">
+<meta name="twitter:description" content="放假以来，服务器Apache二次崩掉了，不能再拖了，找bug解决；">
 
 
 
@@ -121,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="http://zhenxin1994.com/categories/技术/Apache/"/>
+  <link rel="canonical" href="http://zhenxin1994.com/2017/08/14/2017-08-14-Apache崩掉：修改每个进程的线程数ThreadsPerChild /"/>
 
 
 
@@ -143,7 +148,7 @@
 
 
 
-  <title>分类: Apache | 绵绵小站</title>
+  <title>Apache崩掉：修改每个进程的线程数参数ThreadsPerChild | 绵绵小站</title>
   
 
 
@@ -179,7 +184,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -283,45 +288,228 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>Apache<small>分类</small>
-      </h1>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/14/2017-08-14-Apache崩掉：修改每个进程的线程数ThreadsPerChild /" itemprop="url">
-              
-                <span itemprop="name">Apache崩掉：修改每个进程的线程数参数ThreadsPerChild</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-14T18:28:00+08:00"
-              content="2017-08-14" >
-          08-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhenxin1994.com/2017/08/14/2017-08-14-Apache崩掉：修改每个进程的线程数ThreadsPerChild /">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="绵绵">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://orxxyc255.bkt.clouddn.com/119392108751f1b6b7l.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绵绵小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Apache崩掉：修改每个进程的线程数参数ThreadsPerChild</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-14T18:28:00+08:00">
+                2017-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/Apache/" itemprop="url" rel="index">
+                    <span itemprop="name">Apache</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/08/14/2017-08-14-Apache崩掉：修改每个进程的线程数ThreadsPerChild /#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/08/14/2017-08-14-Apache崩掉：修改每个进程的线程数ThreadsPerChild /" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2017/08/14/2017-08-14-Apache崩掉：修改每个进程的线程数ThreadsPerChild /" class="leancloud_visitors" data-flag-title="Apache崩掉：修改每个进程的线程数参数ThreadsPerChild">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>放假以来，服务器Apache二次崩掉了，不能再拖了，找bug解决；<br><a id="more"></a></p>
+<p>崩掉的具体状况是，服务器出现弹框显示：Apache停止工作；<br>顺手关掉这个可恶的小弹框，世界就清静了，服务器正常运行；</p>
+<p><strong>具体问题：</strong></p>
+<hr>
+<p>查看错误日志<code>\Apache\logs</code>，找到关键报错：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[Mon Aug <span class="number">14</span> <span class="number">10</span>:<span class="number">47</span>:<span class="number">19.644531</span> <span class="number">2017</span>] [mpm_winnt:error] [pid <span class="number">5776</span>:tid <span class="number">4144</span>] AH00326: Server ran out of threads to serve requests. Consider raising the ThreadsPerChild setting</div></pre></td></tr></table></figure></p>
+<p>报错表示进程的线程数不够用，可以修改<code>ThreadsPerChild</code>，即每个子进程的最大并发线程数。</p>
+<p><strong>报错分析：</strong></p>
+<hr>
+<p>Apache针对不同的操作系统提供了多个不同的MPM模块，例如：<code>mpm_beos</code>、<code>mpm_event</code>、<code>mpm_netware</code>、<code>mpmt_os2</code>、<code>mpm_prefork</code>、<code>mpm_winnt</code>、<code>mpm_worker</code>。<br>Windows操作系统上默认的MPM模块是<code>mpm_winnt</code>，<code>mpm_winnt</code>模块是专门针对Windows操作系统而优化设计的MPM模块。它只创建一个单独的子进程，并在这个子进程中轮流产生多个线程来处理请求。<br>在对Apache的MPM模块具备一定了解后，我们就可以针对不同的MPM模块来修改Apache的最大并发连接数配置了。</p>
+<p><strong>报错解决：</strong></p>
+<hr>
+<p>修改MPM模块配置</p>
+<p>1 启用MPM模块配置文件</p>
+<p>在Apace安装目录<code>/conf/extra</code>目录中有一个名为<code>httpd-mpm.conf</code>的配置文件。该文件主要用于进行MPM模块的相关配置。不过，在默认情况下，Apache的MPM模块配置文件并没有启用。因此，我们需要在<code>httpd.conf</code>文件中启用该配置文件，如下所示：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Server-pool management (MPM specific)</span></div><div class="line"><span class="keyword">Include</span> conf/extra/httpd-mpm.conf (去掉该行前面的注释符号<span class="string">"#"</span>)</div></pre></td></tr></table></figure></p>
+<p>2 修改MPM模块配置文件中的相关配置</p>
+<p>修改<code>http-mpm.conf</code>文件<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#由于mpm_winnt模块只会创建1个子进程，因此这里对单个子进程的参数设置就相当于对整个Apache的参数设置。</span></div><div class="line"></div><div class="line">&lt;IfModule mpm_winnt_module&gt;</div><div class="line">ThreadsPerChild      <span class="number">521</span> <span class="comment">#默认值是150，推荐设置：小型网站=1000 中型网站=1000~2000 大型网站=2000~3500</span></div><div class="line">MaxRequestsPerChild    <span class="number">3000</span> <span class="comment">#推荐设置：小=10000 中或大=20000~100000</span></div><div class="line">&lt;/IfModule&gt;</div></pre></td></tr></table></figure></p>
+<p>3 重启phpstudy，启动成功了，接下来几天是观察时间了；有错的话再更新文章！</p>
+<p><strong>参考文章：</strong></p>
+<hr>
+<ul>
+<li><a href="http://www.365mini.com/page/apache-concurrency-configuration.htm" target="_blank" rel="external">Apache优化：修改最大并发连接数</a></li>
+<li><a href="https://www.ubuntukylin.com/ukylin/forum.php?mod=viewthread&amp;tid=2876" target="_blank" rel="external">Apache工作模式配置</a></li>
+<li><a href="https://www.bbsmax.com/A/QV5Z1B94Jy/" target="_blank" rel="external">Server ran out of threads to serve requests. Consider raising the ThreadsPerChild setting</a></li>
+<li><a href="http://www.viblue.com/wiki/924459681.html" target="_blank" rel="external">Apache总是停止工作怎么办</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Apache/" rel="tag"># Apache</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/12/2017-08-12-网易2018届前端开发内推笔试总结/" rel="next" title="网易2018届前端开发内推笔试总结">
+                <i class="fa fa-chevron-left"></i> 网易2018届前端开发内推笔试总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -329,6 +517,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
 
         </div>
         
@@ -554,10 +748,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
@@ -581,6 +775,8 @@
 
 		_hcwp.push({widget:"Bloggerstream", widget_id: 93191, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
+		
+		_hcwp.push({widget:"Stream", widget_id: 93191, xid: "2017/08/14/2017-08-14-Apache崩掉：修改每个进程的线程数ThreadsPerChild /"});
 		
 
 		(function() {
