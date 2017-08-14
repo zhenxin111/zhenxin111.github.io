@@ -95,7 +95,7 @@
 <meta property="og:url" content="http://zhenxin1994.com/2017/08/14/Apache-error-raising-the-ThreadsPerChild-setting/index.html">
 <meta property="og:site_name" content="绵绵小站">
 <meta property="og:description" content="放假以来，服务器Apache二次崩掉了，不能再拖了，找bug解决；">
-<meta property="og:updated_time" content="2017-08-14T11:05:18.000Z">
+<meta property="og:updated_time" content="2017-08-14T11:46:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Apache崩掉：为进程配置合适的线程数">
 <meta name="twitter:description" content="放假以来，服务器Apache二次崩掉了，不能再拖了，找bug解决；">
@@ -423,7 +423,7 @@
 <p><strong>具体问题：</strong></p>
 <hr>
 <p>查看错误日志<code>\Apache\logs</code>，找到关键报错：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[Mon Aug <span class="number">14</span> <span class="number">10</span>:<span class="number">47</span>:<span class="number">19.644531</span> <span class="number">2017</span>] [mpm_winnt:error] [pid <span class="number">5776</span>:tid <span class="number">4144</span>] AH00326: Server ran out of threads to serve requests. Consider raising the ThreadsPerChild setting</div></pre></td></tr></table></figure></p>
-<p>报错表示进程的线程数不够用，可以修改<code>ThreadsPerChild</code>，即每个子进程的最大并发线程数。</p>
+<p>报错表示进程的线程数不够用，可以修改<code>ThreadsPerChild</code>，即每个子进程开启的并发线程数。</p>
 <p><strong>报错分析：</strong></p>
 <hr>
 <p>Apache针对不同的操作系统提供了多个不同的MPM模块，例如：<code>mpm_beos</code>、<code>mpm_event</code>、<code>mpm_netware</code>、<code>mpmt_os2</code>、<code>mpm_prefork</code>、<code>mpm_winnt</code>、<code>mpm_worker</code>。<br>Windows操作系统上默认的MPM模块是<code>mpm_winnt</code>，<code>mpm_winnt</code>模块是专门针对Windows操作系统而优化设计的MPM模块。它只创建一个单独的子进程，并在这个子进程中轮流产生多个线程来处理请求。<br>在对Apache的MPM模块具备一定了解后，我们就可以针对不同的MPM模块来修改Apache的最大并发连接数配置了。</p>
