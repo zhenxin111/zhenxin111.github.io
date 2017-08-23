@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>http://zhenxin1994.com/2017/08/23/Alibaba-Written-test/</loc>
+    <lastmod>2017-08-23T14:48:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>阿里巴巴2018届前端开发笔试总结</title>
+        <pubTime>2017-08-23T13:22:00.000Z</pubTime>
+        
+        <tag>笔试</tag>
+         
+         
+           
+             
+              <breadCrumb title="毕业" url="http://zhenxin1994.com/categories/%E6%AF%95%E4%B8%9A/"/>
+          
+             
+              <breadCrumb title="笔试" url="http://zhenxin1994.com/categories/%E6%AF%95%E4%B8%9A/%E7%AC%94%E8%AF%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://zhenxin1994.com/2017/08/20/Babel-movie/</loc>
     <lastmod>2017-08-20T17:00:18.000Z</lastmod>
     <data>
@@ -237,12 +260,12 @@
     
     
   <url>
-    <loc>http://zhenxin1994.com/2017/07/15/2017-07-15-%E8%87%AA%E4%BF%A1%E4%B8%8E%E8%87%AA%E5%AE%89/</loc>
+    <loc>http://zhenxin1994.com/2017/07/16/2017-07-16-%E4%BA%BA%E7%9A%84%E4%B8%89%E4%BD%8D%E4%B8%80%E4%BD%93%E7%9A%84%E7%96%91%E9%97%AE/</loc>
     <lastmod>2017-08-05T12:30:06.000Z</lastmod>
     <data>
         <display>
-        <title>自信与自安</title>
-        <pubTime>2017-07-14T16:47:00.000Z</pubTime>
+        <title>人的三位一体的疑问</title>
+        <pubTime>2017-07-16T15:39:00.000Z</pubTime>
         
         <tag>疑问</tag>
          
@@ -260,12 +283,12 @@
 
     
   <url>
-    <loc>http://zhenxin1994.com/2017/07/14/2017-07-14-%E8%87%AA%E9%97%AE/</loc>
+    <loc>http://zhenxin1994.com/2017/07/15/2017-07-15-%E8%87%AA%E4%BF%A1%E4%B8%8E%E8%87%AA%E5%AE%89/</loc>
     <lastmod>2017-08-05T12:30:06.000Z</lastmod>
     <data>
         <display>
-        <title>安慰别人以及有关愤青的疑问</title>
-        <pubTime>2017-07-14T06:47:00.000Z</pubTime>
+        <title>自信与自安</title>
+        <pubTime>2017-07-14T16:47:00.000Z</pubTime>
         
         <tag>疑问</tag>
          
@@ -301,29 +324,6 @@
           
              
               <breadCrumb title="SQL语句" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/SQL%E8%AF%AD%E5%8F%A5/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://zhenxin1994.com/2017/07/16/2017-07-16-%E4%BA%BA%E7%9A%84%E4%B8%89%E4%BD%8D%E4%B8%80%E4%BD%93%E7%9A%84%E7%96%91%E9%97%AE/</loc>
-    <lastmod>2017-08-05T12:30:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>人的三位一体的疑问</title>
-        <pubTime>2017-07-16T15:39:00.000Z</pubTime>
-        
-        <tag>疑问</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/"/>
-          
-             
-              <breadCrumb title="自问" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/%E8%87%AA%E9%97%AE/"/>
           
         </display>
     </data>
@@ -402,31 +402,6 @@
 
     
   <url>
-    <loc>http://zhenxin1994.com/2017/06/24/2017-06-24-sqlServer-union-table/</loc>
-    <lastmod>2017-08-05T12:30:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>SQL Server 合并两个结构不同的表</title>
-        <pubTime>2017-06-24T14:23:58.000Z</pubTime>
-        
-        <tag>存储过程</tag>
-         
-        <tag>sql语句</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-             
-              <breadCrumb title="SQL语句" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/SQL%E8%AF%AD%E5%8F%A5/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://zhenxin1994.com/2015/10/29/2015-10-29-current-index/</loc>
     <lastmod>2017-08-05T12:30:06.000Z</lastmod>
     <data>
@@ -445,29 +420,6 @@
           
              
               <breadCrumb title="ASPCMS" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/ASPCMS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://zhenxin1994.com/2017/07/11/2017-07-11-lyric/</loc>
-    <lastmod>2017-08-05T12:30:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>鲜活</title>
-        <pubTime>2017-07-11T07:59:00.000Z</pubTime>
-        
-        <tag>歌词</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/"/>
-          
-             
-              <breadCrumb title="音乐" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/%E9%9F%B3%E4%B9%90/"/>
           
         </display>
     </data>
@@ -499,7 +451,53 @@
     </url>
 
     
+  <url>
+    <loc>http://zhenxin1994.com/2017/07/11/2017-07-11-lyric/</loc>
+    <lastmod>2017-08-05T12:30:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>鲜活</title>
+        <pubTime>2017-07-11T07:59:00.000Z</pubTime>
+        
+        <tag>歌词</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/"/>
+          
+             
+              <breadCrumb title="音乐" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/%E9%9F%B3%E4%B9%90/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
+  <url>
+    <loc>http://zhenxin1994.com/2017/06/24/2017-06-24-sqlServer-union-table/</loc>
+    <lastmod>2017-08-05T12:30:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>SQL Server 合并两个结构不同的表</title>
+        <pubTime>2017-06-24T14:23:58.000Z</pubTime>
+        
+        <tag>存储过程</tag>
+         
+        <tag>sql语句</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="SQL语句" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/SQL%E8%AF%AD%E5%8F%A5/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://zhenxin1994.com/2017/04/13/2017-04-13-JavaScript%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93%E2%80%94%E2%80%94Object%E7%B1%BB%E5%9E%8B%E3%80%81Array%E7%B1%BB%E5%9E%8B/</loc>
@@ -526,5 +524,30 @@
     </url>
 
     
+    
+    
+    
+  <url>
+    <loc>http://zhenxin1994.com/2017/07/14/2017-07-14-%E8%87%AA%E9%97%AE/</loc>
+    <lastmod>2017-08-05T12:30:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>安慰别人以及有关愤青的疑问</title>
+        <pubTime>2017-07-14T06:47:00.000Z</pubTime>
+        
+        <tag>疑问</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/"/>
+          
+             
+              <breadCrumb title="自问" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/%E8%87%AA%E9%97%AE/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
 </urlset>
