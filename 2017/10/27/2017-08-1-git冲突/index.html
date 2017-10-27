@@ -88,17 +88,17 @@
 
 
 
-<meta name="description" content="文章记录使用git遇到的问题，以及解决方案。">
+<meta name="description" content="原文2017年08月01日生成。文章记录使用git遇到的问题，以及解决方案。">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git日常使用问题总结">
-<meta property="og:url" content="http://zhenxin1994.com/2017/08/01/2017-08-1-git冲突/index.html">
+<meta property="og:url" content="http://zhenxin1994.com/2017/10/27/2017-08-1-git冲突/index.html">
 <meta property="og:site_name" content="绵绵小站">
-<meta property="og:description" content="文章记录使用git遇到的问题，以及解决方案。">
-<meta property="og:updated_time" content="2017-08-08T15:35:28.000Z">
+<meta property="og:description" content="原文2017年08月01日生成。文章记录使用git遇到的问题，以及解决方案。">
+<meta property="og:updated_time" content="2017-10-27T07:29:26.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git日常使用问题总结">
-<meta name="twitter:description" content="文章记录使用git遇到的问题，以及解决方案。">
+<meta name="twitter:description" content="原文2017年08月01日生成。文章记录使用git遇到的问题，以及解决方案。">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="http://zhenxin1994.com/2017/08/01/2017-08-1-git冲突/"/>
+  <link rel="canonical" href="http://zhenxin1994.com/2017/10/27/2017-08-1-git冲突/"/>
 
 
 
@@ -298,7 +298,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://zhenxin1994.com/2017/08/01/2017-08-1-git冲突/">
+    <link itemprop="mainEntityOfPage" href="http://zhenxin1994.com/2017/10/27/2017-08-1-git冲突/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="绵绵">
@@ -327,8 +327,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-01T12:27:00+08:00">
-                2017-08-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T14:27:00+08:00">
+                2017-10-27
               </time>
             
 
@@ -380,8 +380,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/01/2017-08-1-git冲突/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/08/01/2017-08-1-git冲突/" itemprop="commentsCount"></span>
+                <a href="/2017/10/27/2017-08-1-git冲突/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/10/27/2017-08-1-git冲突/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -390,7 +390,7 @@
 
           
           
-             <span id="/2017/08/01/2017-08-1-git冲突/" class="leancloud_visitors" data-flag-title="git日常使用问题总结">
+             <span id="/2017/10/27/2017-08-1-git冲突/" class="leancloud_visitors" data-flag-title="git日常使用问题总结">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -418,12 +418,24 @@
       
 
       
-        <p>文章记录使用git遇到的问题，以及解决方案。<br><a id="more"></a></p>
+        <p>原文2017年08月01日生成。<br>文章记录使用git遇到的问题，以及解决方案。<br><a id="more"></a></p>
+<h2 id="git上传远程仓库操作"><a href="#git上传远程仓库操作" class="headerlink" title="git上传远程仓库操作"></a>git上传远程仓库操作</h2><blockquote>
+<p>git init<br>git add .<br>git remote add origin 仓库地址<br>git commit -m “备注内容”<br>git push origin master</p>
+</blockquote>
+<p>## </p>
+<p>仓库有一个README.md文件，本地没有，push后出错，<br>解决方法：</p>
+<blockquote>
+<p>先<code>pull</code>再<code>push</code></p>
+</blockquote>
+<p>此时如果pull报错：<code>fatal: refusing to merge unrelated histories</code><br>可能是git 2.9.2之后版本，解决方法：</p>
+<blockquote>
+<p>使用<code>git pull origin master ----allow-unrelated-histories</code>，然后再push</p>
+</blockquote>
 <h2 id="git文件添加："><a href="#git文件添加：" class="headerlink" title="git文件添加："></a>git文件添加：</h2><ul>
 <li>添加所有文件：<code>git add *</code></li>
-<li>添加单个文件：`git add “文件名”</li>
+<li>添加单个文件：<code>git add &quot;文件名&quot;</code></li>
 </ul>
-<h2 id="名称太长的文件添加失败"><a href="#名称太长的文件添加失败" class="headerlink" title="名称太长的文件添加失败"></a>名称太长的文件添加失败</h2><p>git add时，名称太长的文件添加失败</p>
+<h2 id="名称太长的文件添加失败"><a href="#名称太长的文件添加失败" class="headerlink" title="名称太长的文件添加失败"></a>名称太长的文件添加失败</h2><p><code>git add</code>时，名称太长的文件添加失败</p>
 <h2 id="pull冲突"><a href="#pull冲突" class="headerlink" title="pull冲突"></a>pull冲突</h2><p>使用git对多人参与的项目进行版本控制时，遇到pull过程发生冲突，本地文件被覆盖的情况；<br>具体情况：</p>
 <blockquote>
 <p>远程仓库中，存在a文件；<br>本地对a文件内容进行了删除增加修改；<br>git上传后，发现本地以及仓库中的a文件内容是远程仓库版本与本地版本的合并；</p>
@@ -477,8 +489,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/28/2017-07-28-web阅读文档操作/" rel="next" title="web阅读文档操作">
-                <i class="fa fa-chevron-left"></i> web阅读文档操作
+              <a href="/2017/09/25/js-this/" rel="next" title="一道this指向题">
+                <i class="fa fa-chevron-left"></i> 一道this指向题
               </a>
             
           </div>
@@ -486,10 +498,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/14/Apache-error-raising-the-ThreadsPerChild-setting/" rel="prev" title="Apache崩掉：为进程配置合适的线程数">
-                Apache崩掉：为进程配置合适的线程数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -650,7 +658,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git文件添加："><span class="nav-number">1.</span> <span class="nav-text">git文件添加：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名称太长的文件添加失败"><span class="nav-number">2.</span> <span class="nav-text">名称太长的文件添加失败</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pull冲突"><span class="nav-number">3.</span> <span class="nav-text">pull冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地代码库版本回滚"><span class="nav-number">4.</span> <span class="nav-text">本地代码库版本回滚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装node，使用npm配合hexo出错"><span class="nav-number">5.</span> <span class="nav-text">安装node，使用npm配合hexo出错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备份hexo博客源码时，出现主题不能上传的情况"><span class="nav-number">6.</span> <span class="nav-text">备份hexo博客源码时，出现主题不能上传的情况</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git上传远程仓库操作"><span class="nav-number">1.</span> <span class="nav-text">git上传远程仓库操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git文件添加："><span class="nav-number">2.</span> <span class="nav-text">git文件添加：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名称太长的文件添加失败"><span class="nav-number">3.</span> <span class="nav-text">名称太长的文件添加失败</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pull冲突"><span class="nav-number">4.</span> <span class="nav-text">pull冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地代码库版本回滚"><span class="nav-number">5.</span> <span class="nav-text">本地代码库版本回滚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装node，使用npm配合hexo出错"><span class="nav-number">6.</span> <span class="nav-text">安装node，使用npm配合hexo出错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备份hexo博客源码时，出现主题不能上传的情况"><span class="nav-number">7.</span> <span class="nav-text">备份hexo博客源码时，出现主题不能上传的情况</span></a></li></ol></div>
             
 
           </div>
@@ -797,7 +805,7 @@
 		_hcwp.push({widget:"Bloggerstream", widget_id: 93191, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 93191, xid: "2017/08/01/2017-08-1-git冲突/"});
+		_hcwp.push({widget:"Stream", widget_id: 93191, xid: "2017/10/27/2017-08-1-git冲突/"});
 		
 
 		(function() {

@@ -4,8 +4,8 @@
 
     
   <url>
-    <loc>http://zhenxin1994.com/2017/07/28/2017-07-28-web%E9%98%85%E8%AF%BB%E6%96%87%E6%A1%A3%E6%93%8D%E4%BD%9C/</loc>
-    <lastmod>2017-10-22T14:25:28.263Z</lastmod>
+    <loc>http://zhenxin1994.com/2017/07/28/2017-07-28-web-online-ready-pdf/</loc>
+    <lastmod>2017-10-27T07:48:00.486Z</lastmod>
     <data>
         <display>
         <title>web阅读文档操作</title>
@@ -20,6 +20,52 @@
           
              
               <breadCrumb title="JavaScript" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zhenxin1994.com/2017/10/27/2017-08-1-git%E5%86%B2%E7%AA%81/</loc>
+    <lastmod>2017-10-27T07:29:26.017Z</lastmod>
+    <data>
+        <display>
+        <title>git日常使用问题总结</title>
+        <pubTime>2017-10-27T06:27:00.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="git" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zhenxin1994.com/2017/09/19/web-front-end-coding/</loc>
+    <lastmod>2017-10-26T13:11:00.843Z</lastmod>
+    <data>
+        <display>
+        <title>前端知识编程题整理</title>
+        <pubTime>2017-09-19T07:20:00.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习" url="http://zhenxin1994.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+          
+             
+              <breadCrumb title="JavaScript" url="http://zhenxin1994.com/categories/%E5%AD%A6%E4%B9%A0/JavaScript/"/>
           
         </display>
     </data>
@@ -43,29 +89,6 @@
           
              
               <breadCrumb title="读书笔记" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://zhenxin1994.com/2017/09/19/web-front-end-coding/</loc>
-    <lastmod>2017-10-07T11:16:06.149Z</lastmod>
-    <data>
-        <display>
-        <title>前端知识编程题整理</title>
-        <pubTime>2017-09-19T07:20:00.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习" url="http://zhenxin1994.com/categories/%E5%AD%A6%E4%B9%A0/"/>
-          
-             
-              <breadCrumb title="JavaScript" url="http://zhenxin1994.com/categories/%E5%AD%A6%E4%B9%A0/JavaScript/"/>
           
         </display>
     </data>
@@ -322,29 +345,6 @@
           
              
               <breadCrumb title="SQL语句" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/SQL%E8%AF%AD%E5%8F%A5/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://zhenxin1994.com/2017/08/01/2017-08-1-git%E5%86%B2%E7%AA%81/</loc>
-    <lastmod>2017-08-08T15:35:28.000Z</lastmod>
-    <data>
-        <display>
-        <title>git日常使用问题总结</title>
-        <pubTime>2017-08-01T04:27:00.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-             
-              <breadCrumb title="git" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/git/"/>
           
         </display>
     </data>
