@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zhenxin1994.com/2018/01/18/css-direction-unicode-bidi/</loc>
+    
+    <lastmod>2018-07-10T05:17:21.895Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zhenxin1994.com/2017/12/21/tree-painting/</loc>
     
     <lastmod>2017-12-21T11:36:44.000Z</lastmod>
@@ -121,7 +128,14 @@
   </url>
   
   <url>
-    <loc>http://zhenxin1994.com/2017/06/20/2017-06-20-movie-Kang-rinpoche/</loc>
+    <loc>http://zhenxin1994.com/2017/06/16/2017-06-16-css-image-zoom/</loc>
+    
+    <lastmod>2017-08-05T12:30:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zhenxin1994.com/2017/06/24/2017-06-24-sqlServer-union-table/</loc>
     
     <lastmod>2017-08-05T12:30:06.000Z</lastmod>
     
@@ -142,28 +156,7 @@
   </url>
   
   <url>
-    <loc>http://zhenxin1994.com/2017/06/16/2017-06-16-css-image-zoom/</loc>
-    
-    <lastmod>2017-08-05T12:30:06.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zhenxin1994.com/2017/06/24/2017-06-24-sqlServer-union-table/</loc>
-    
-    <lastmod>2017-08-05T12:30:06.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://zhenxin1994.com/2017/04/12/2017-04-12-JavaScript%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93%E2%80%94%E2%80%94%E5%8F%98%E9%87%8F%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%86%85%E5%AD%98%E9%97%AE%E9%A2%98/</loc>
-    
-    <lastmod>2017-08-05T12:30:06.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zhenxin1994.com/2017/06/13/2017-06-13-%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%B5%8B%E5%80%BC%E9%97%AE%E9%A2%98/</loc>
     
     <lastmod>2017-08-05T12:30:06.000Z</lastmod>
     
@@ -198,6 +191,20 @@
   </url>
   
   <url>
+    <loc>http://zhenxin1994.com/2017/06/20/2017-06-20-movie-Kang-rinpoche/</loc>
+    
+    <lastmod>2017-08-05T12:30:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zhenxin1994.com/2017/06/13/2017-06-13-%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%B5%8B%E5%80%BC%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2017-08-05T12:30:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zhenxin1994.com/google4a1225cb4a4df5de.html</loc>
     
     <lastmod>2017-08-05T12:30:06.000Z</lastmod>
@@ -205,14 +212,14 @@
   </url>
   
   <url>
-    <loc>http://zhenxin1994.com/2017/03/04/2017-03-04-PHP%E4%B8%AD%E9%80%9A%E8%BF%87sqlsrv%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E2%80%94%E2%80%94%E6%88%90%E7%BB%A9%E6%8E%92%E5%90%8D%E5%8E%BB%E9%99%A4%E9%87%8D%E5%A4%8D%E5%AD%97%E6%AE%B5%E7%9A%84%E6%95%B0%E6%8D%AE%E8%A1%8C/</loc>
+    <loc>http://zhenxin1994.com/about/index-1.html</loc>
     
     <lastmod>2017-08-05T12:30:06.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://zhenxin1994.com/about/index-1.html</loc>
+    <loc>http://zhenxin1994.com/2017/03/04/2017-03-04-PHP%E4%B8%AD%E9%80%9A%E8%BF%87sqlsrv%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E2%80%94%E2%80%94%E6%88%90%E7%BB%A9%E6%8E%92%E5%90%8D%E5%8E%BB%E9%99%A4%E9%87%8D%E5%A4%8D%E5%AD%97%E6%AE%B5%E7%9A%84%E6%95%B0%E6%8D%AE%E8%A1%8C/</loc>
     
     <lastmod>2017-08-05T12:30:06.000Z</lastmod>
     
