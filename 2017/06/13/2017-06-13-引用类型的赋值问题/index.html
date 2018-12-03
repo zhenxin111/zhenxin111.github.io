@@ -95,13 +95,13 @@
 <meta property="og:url" content="http://zhenxin1994.com/2017/06/13/2017-06-13-引用类型的赋值问题/index.html">
 <meta property="og:site_name" content="绵绵小站">
 <meta property="og:description" content="问题描述123456var a = &amp;#123;n: 1&amp;#125;;var b = a;a.x = a = &amp;#123;n: 2&amp;#125;;console.log(a.x);console.log(b);输出什么">
-<meta property="og:image" content="http://orxxyc255.bkt.clouddn.com/17061301.png">
-<meta property="og:image" content="http://orxxyc255.bkt.clouddn.com/17061302.png">
-<meta property="og:updated_time" content="2017-08-05T12:30:06.000Z">
+<meta property="og:image" content="http://orxxyc255.https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/17061301.png">
+<meta property="og:image" content="http://orxxyc255.https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/17061302.png">
+<meta property="og:updated_time" content="2018-12-03T12:24:38.438Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="引用类型的赋值问题">
 <meta name="twitter:description" content="问题描述123456var a = &amp;#123;n: 1&amp;#125;;var b = a;a.x = a = &amp;#123;n: 2&amp;#125;;console.log(a.x);console.log(b);输出什么">
-<meta name="twitter:image" content="http://orxxyc255.bkt.clouddn.com/17061301.png">
+<meta name="twitter:image" content="http://orxxyc255.https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/17061301.png">
 
 
 
@@ -425,7 +425,7 @@
 <a id="more"></a>
 <h2 id="错误分析"><a href="#错误分析" class="headerlink" title="错误分析"></a>错误分析</h2><p>直觉性的判断得出：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a.x=&#123;n,<span class="number">2</span>&#125;;b=&#123;<span class="attr">n</span>:<span class="number">2</span>,<span class="attr">x</span>:object&#125;;</div></pre></td></tr></table></figure></p>
 <p>然后写了JS示例，在火狐中通过F12调用控制台面板得到以下输出：</p>
-<p><img src="http://orxxyc255.bkt.clouddn.com/17061301.png" alt="image"></p>
+<p><img src="http://orxxyc255.https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/17061301.png" alt="image"></p>
 <p>分析错误原因有两点：</p>
 <ul>
 <li><p>理解了引用类型变量的复制情况，没有理解引用类型变量作为指针实质，赋值时的使用。</p>
@@ -454,7 +454,7 @@
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">n</span>: <span class="number">1</span>&#125;;     <span class="comment">//将a指向对象&#123;n:1&#125;</span></div><div class="line"><span class="keyword">var</span> b = a;          <span class="comment">//引用类型变量复制，b也指向对象&#123;n:1&#125;</span></div><div class="line">a.x = a  = &#123;<span class="attr">n</span>: <span class="number">2</span>&#125;;  <span class="comment">//按照操作符优先级处理a.x,即添加a所指对象的属性x,对象修改为&#123;n:1,x:undefined&#125;</span></div><div class="line">                    <span class="comment">//再按照自右向左的顺序赋值，先引用类型a重新指向新对象&#123;n:2&#125;，</span></div><div class="line">　　　　　　　　　　　　　<span class="comment">//后从变量a向变量a.x赋值引用类型，指向同一个对象&#123;n:2&#125;</span></div><div class="line"><span class="built_in">console</span>.log(a.x);   <span class="comment">//a没有x属性，undefined</span></div><div class="line"><span class="built_in">console</span>.log(b);     <span class="comment">//b指向对象&#123;n:1,x:Object&#125;</span></div></pre></td></tr></table></figure>
 <ul>
-<li>附变量关系图：<br><img src="http://orxxyc255.bkt.clouddn.com/17061302.png" alt="image"></li>
+<li>附变量关系图：<br><img src="http://orxxyc255.https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/17061302.png" alt="image"></li>
 </ul>
 
       
