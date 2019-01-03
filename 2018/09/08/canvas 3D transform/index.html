@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="canvas," />
 
 
 
@@ -89,8 +89,9 @@
 
 
 <meta name="description" content="Canvas 3D元素绘制、旋转变换使用canvas获取上下文时，使用getContext(&amp;quot;2d&amp;quot;)api；那么相应的是不是也有getContext(&amp;quot;3d&amp;quot;)？">
+<meta name="keywords" content="canvas">
 <meta property="og:type" content="article">
-<meta property="og:title" content="绵绵小站">
+<meta property="og:title" content="canvas 3D元素、旋转变换">
 <meta property="og:url" content="http://zhenxin1994.com/2018/09/08/canvas 3D transform/index.html">
 <meta property="og:site_name" content="绵绵小站">
 <meta property="og:description" content="Canvas 3D元素绘制、旋转变换使用canvas获取上下文时，使用getContext(&amp;quot;2d&amp;quot;)api；那么相应的是不是也有getContext(&amp;quot;3d&amp;quot;)？">
@@ -101,9 +102,9 @@
 <meta property="og:image" content="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/pasted-image-2.png">
 <meta property="og:image" content="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/pasted-image-3.png">
 <meta property="og:image" content="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/pasted-image-4.png">
-<meta property="og:updated_time" content="2019-01-03T03:19:57.845Z">
+<meta property="og:updated_time" content="2019-01-03T03:22:41.997Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="绵绵小站">
+<meta name="twitter:title" content="canvas 3D元素、旋转变换">
 <meta name="twitter:description" content="Canvas 3D元素绘制、旋转变换使用canvas获取上下文时，使用getContext(&amp;quot;2d&amp;quot;)api；那么相应的是不是也有getContext(&amp;quot;3d&amp;quot;)？">
 <meta name="twitter:image" content="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/canvas%203d.003.jpeg">
 
@@ -155,7 +156,7 @@
 
 
 
-  <title> | 绵绵小站</title>
+  <title>canvas 3D元素、旋转变换 | 绵绵小站</title>
   
 
 
@@ -322,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">canvas 3D元素、旋转变换</h1>
         
 
         <div class="post-meta">
@@ -334,7 +335,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-08T15:38:53+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-08T15:20:00+08:00">
                 2018-09-08
               </time>
             
@@ -344,6 +345,39 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/canvas/" itemprop="url" rel="index">
+                    <span itemprop="name">canvas</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -364,7 +398,7 @@
 
           
           
-             <span id="/2018/09/08/canvas 3D transform/" class="leancloud_visitors" data-flag-title="">
+             <span id="/2018/09/08/canvas 3D transform/" class="leancloud_visitors" data-flag-title="canvas 3D元素、旋转变换">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -392,8 +426,7 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><ul>
-<li><h1 id="Canvas-3D元素绘制、旋转变换"><a href="#Canvas-3D元素绘制、旋转变换" class="headerlink" title="Canvas 3D元素绘制、旋转变换"></a>Canvas 3D元素绘制、旋转变换</h1><p>使用canvas获取上下文时，使用<code>getContext(&quot;2d&quot;)</code>api；那么相应的是不是也有<code>getContext(&quot;3d&quot;)</code>？</p>
+        <script src="/assets/js/APlayer.min.js"> </script><h1 id="Canvas-3D元素绘制、旋转变换"><a href="#Canvas-3D元素绘制、旋转变换" class="headerlink" title="Canvas 3D元素绘制、旋转变换"></a>Canvas 3D元素绘制、旋转变换</h1><p>使用canvas获取上下文时，使用<code>getContext(&quot;2d&quot;)</code>api；那么相应的是不是也有<code>getContext(&quot;3d&quot;)</code>？</p>
 <a id="more"></a>
 <p>沮丧脸，现阶段还不支持该api；那么我们如何通过2d 的canvas面绘制出3d效果的元素呢？</p>
 <p>使用<strong>透视投影</strong></p>
@@ -408,24 +441,22 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">scale = f1 / (f1 + zpos);</div><div class="line">object.scaleX = object.scaleY = scale;</div><div class="line">object.alpha = scale; <span class="comment">// optional</span></div><div class="line">object.x = vanishingPointX + xpos * scale;</div><div class="line">object.y = vanishingPointY + ypos * scale;</div></pre></td></tr></table></figure>
 <p>示例：</p>
 <p><img src="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/pasted-image.png" alt="image-20180908161729898"></p>
-</li>
-</ul>
-<h3 id="简单的3d旋转"><a href="#简单的3d旋转" class="headerlink" title="简单的3d旋转"></a>简单的3d旋转</h3><p>  参照css 3d transform坐标系：</p>
-<p>  <img src="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/pasted-image-2.png" alt="image-20180908154734767"></p>
-<p>  （y轴的正轴朝下）</p>
-<p>  在处理三维坐标旋转时，使用标准的矩阵旋转公示是沒有问题的。但是把二维坐标旋转调用三次，也能够实现三维坐标的旋转，易读易懂，处理速度也较快。</p>
-<p>  三维坐标旋转的二维分解图如下：</p>
-<p>  <img src="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/pasted-image-3.png" alt="image-20180908155028467"></p>
-<p>  其中，一般的二维坐标旋转绕是Z轴旋转，物体只有x、y坐标会变化（风车旋转），三维中还可以绕x和y轴旋转。</p>
-<p>  绕x轴旋转：只有y、z坐标会变化（轮胎滚动）。</p>
-<p>  绕y轴旋转，只有x，z坐标会变化（唱片机）。</p>
-<p>  <strong>二维坐标旋转</strong></p>
-<p>  <img src="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/pasted-image-4.png" alt="image-20180908155130602"></p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">x1 = (x - x0) * cos(a) - (y - y0) * sin(a) + x0</div><div class="line">y1 = (y - y0) * cos(a) + (x - x0) * sin(a) + y0</div></pre></td></tr></table></figure>
-<p>  对应的其他两个轴的旋转公式：</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 绕x轴旋转</span></div><div class="line">y1 = (y - y0) * cos(a) - (z - z0) * sin(a) + y0</div><div class="line">z1 = (z - z0) * cos(a) + (y - y0) * sin(a) + z0</div><div class="line"></div><div class="line"><span class="comment">// 绕y轴旋转</span></div><div class="line">x1 = (x - x0) * cos(a) - (z - z0) * sin(a) + x0</div><div class="line">z1 = (z - z0) * cos(a) + (x - x0) * sin(a) + z0</div></pre></td></tr></table></figure>
-<p>  注：文章研究的初衷是，canvas元素仿css 3d transform，寻找变换后的坐标点；示例不够具体，此处暂不提供；另外相对3d旋转矩阵计算方法来说，本文方法较为初级，且变换时的顺序要与css 旋转顺序一致，需要注意。</p>
-<p>  参考文章：</p>
+<h3 id="简单的3d旋转"><a href="#简单的3d旋转" class="headerlink" title="简单的3d旋转"></a>简单的3d旋转</h3><p>参照css 3d transform坐标系：</p>
+<p><img src="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/pasted-image-2.png" alt="image-20180908154734767"></p>
+<p>（y轴的正轴朝下）</p>
+<p>在处理三维坐标旋转时，使用标准的矩阵旋转公示是沒有问题的。但是把二维坐标旋转调用三次，也能够实现三维坐标的旋转，易读易懂，处理速度也较快。</p>
+<p>三维坐标旋转的二维分解图如下：</p>
+<p><img src="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/pasted-image-3.png" alt="image-20180908155028467"></p>
+<p>其中，一般的二维坐标旋转绕是Z轴旋转，物体只有x、y坐标会变化（风车旋转），三维中还可以绕x和y轴旋转。</p>
+<p>绕x轴旋转：只有y、z坐标会变化（轮胎滚动）。</p>
+<p>绕y轴旋转，只有x，z坐标会变化（唱片机）。</p>
+<p><strong>二维坐标旋转</strong></p>
+<p><img src="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/pasted-image-4.png" alt="image-20180908155130602"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">x1 = (x - x0) * cos(a) - (y - y0) * sin(a) + x0</div><div class="line">y1 = (y - y0) * cos(a) + (x - x0) * sin(a) + y0</div></pre></td></tr></table></figure>
+<p>对应的其他两个轴的旋转公式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 绕x轴旋转</span></div><div class="line">y1 = (y - y0) * cos(a) - (z - z0) * sin(a) + y0</div><div class="line">z1 = (z - z0) * cos(a) + (y - y0) * sin(a) + z0</div><div class="line"></div><div class="line"><span class="comment">// 绕y轴旋转</span></div><div class="line">x1 = (x - x0) * cos(a) - (z - z0) * sin(a) + x0</div><div class="line">z1 = (z - z0) * cos(a) + (x - x0) * sin(a) + z0</div></pre></td></tr></table></figure>
+<p>注：文章研究的初衷是，canvas元素仿css 3d transform，寻找变换后的坐标点；示例不够具体，此处暂不提供；另外相对3d旋转矩阵计算方法来说，本文方法较为初级，且变换时的顺序要与css 旋转顺序一致，需要注意。</p>
+<p>参考文章：</p>
 <ul>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement" target="_blank" rel="external">HTMLCanvasElement</a></li>
 <li><a href="https://www.w3cplus.com/canvas/canvas-coordinate-system.html" target="_blank" rel="external">Canvas学习：Canvas里的坐标系统</a></li>
@@ -459,6 +490,12 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/canvas/" rel="tag"># canvas</a>
+          
+        </div>
       
 
       
@@ -567,7 +604,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -578,7 +615,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
