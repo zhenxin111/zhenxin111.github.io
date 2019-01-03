@@ -1,0 +1,996 @@
+
+
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="baidu-site-verification" content="I2eChOe9wp" />
+<meta name="google-site-verification" content="sY5e6xdbtkjVo-txKShkrbMGa6yIVAEd3MJGP3I8nn4" />
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="canvas," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Canvas 3D元素绘制、旋转变换使用canvas获取上下文时，使用getContext(&amp;quot;2d&amp;quot;)api；那么相应的是不是也有getContext(&amp;quot;3d&amp;quot;)？">
+<meta name="keywords" content="canvas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="canvas 3D元素、旋转变换">
+<meta property="og:url" content="http://zhenxin1994.com/2018/09/08/canvas 3D transform/index.html">
+<meta property="og:site_name" content="绵绵小站">
+<meta property="og:description" content="Canvas 3D元素绘制、旋转变换使用canvas获取上下文时，使用getContext(&amp;quot;2d&amp;quot;)api；那么相应的是不是也有getContext(&amp;quot;3d&amp;quot;)？">
+<meta property="og:image" content="http://zhenxin1994.com/var/folders/9q/y3bdjkjn54vgj2jny187qk2c0000gn/T/abnerworks.Typora/image-20180908152948850.png">
+<meta property="og:image" content="http://zhenxin1994.com/var/folders/9q/y3bdjkjn54vgj2jny187qk2c0000gn/T/abnerworks.Typora/image-20180908153512020.png">
+<meta property="og:image" content="http://zhenxin1994.com/var/folders/9q/y3bdjkjn54vgj2jny187qk2c0000gn/T/abnerworks.Typora/image-20180908154033410.png">
+<meta property="og:image" content="http://zhenxin1994.com/var/folders/9q/y3bdjkjn54vgj2jny187qk2c0000gn/T/abnerworks.Typora/image-20180908161729898.png">
+<meta property="og:image" content="http://zhenxin1994.com/var/folders/9q/y3bdjkjn54vgj2jny187qk2c0000gn/T/abnerworks.Typora/image-20180908154734767.png">
+<meta property="og:image" content="http://zhenxin1994.com/var/folders/9q/y3bdjkjn54vgj2jny187qk2c0000gn/T/abnerworks.Typora/image-20180908155028467.png">
+<meta property="og:image" content="http://zhenxin1994.com/var/folders/9q/y3bdjkjn54vgj2jny187qk2c0000gn/T/abnerworks.Typora/image-20180908155130602.png">
+<meta property="og:updated_time" content="2018-09-08T08:38:02.048Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="canvas 3D元素、旋转变换">
+<meta name="twitter:description" content="Canvas 3D元素绘制、旋转变换使用canvas获取上下文时，使用getContext(&amp;quot;2d&amp;quot;)api；那么相应的是不是也有getContext(&amp;quot;3d&amp;quot;)？">
+<meta name="twitter:image" content="http://zhenxin1994.com/var/folders/9q/y3bdjkjn54vgj2jny187qk2c0000gn/T/abnerworks.Typora/image-20180908152948850.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhenxin1994.com/2018/09/08/canvas 3D transform/"/>
+
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+  <title>canvas 3D元素、旋转变换 | 绵绵小站</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?62be3d1dfbd8a41c563b6f20848ace84";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <!--<span class="logo-line-before"><i></i></span>-->
+        <span class="site-title">绵绵小站</span>
+        <!--<span class="logo-line-after"><i></i></span>-->
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhenxin1994.com/2018/09/08/canvas 3D transform/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="绵绵">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://orxxyc255.bkt.clouddn.com/119392108751f1b6b7l.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绵绵小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">canvas 3D元素、旋转变换</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-08T15:20:00+08:00">
+                2018-09-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/canvas/" itemprop="url" rel="index">
+                    <span itemprop="name">canvas</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/08/canvas 3D transform/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/09/08/canvas 3D transform/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2018/09/08/canvas 3D transform/" class="leancloud_visitors" data-flag-title="canvas 3D元素、旋转变换">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><h1 id="Canvas-3D元素绘制、旋转变换"><a href="#Canvas-3D元素绘制、旋转变换" class="headerlink" title="Canvas 3D元素绘制、旋转变换"></a>Canvas 3D元素绘制、旋转变换</h1><p>使用canvas获取上下文时，使用<code>getContext(&quot;2d&quot;)</code>api；那么相应的是不是也有<code>getContext(&quot;3d&quot;)</code>？</p>
+<a id="more"></a>
+<p>沮丧脸，现阶段还不支持该api；那么我们如何通过2d 的canvas面绘制出3d效果的元素呢？</p>
+<p>使用<strong>透视投影</strong></p>
+<p><img src="/var/folders/9q/y3bdjkjn54vgj2jny187qk2c0000gn/T/abnerworks.Typora/image-20180908152948850.png" alt="image-20180908152948850"></p>
+<p>三维效果，可以理解为：是建立在一定的透视变化基础上的。而所谓的透视变化，指的是人眼观察物体时会有的“近大远小”的效果。</p>
+<p>元素依照自己在虚拟三维空间中的位置，调整自己的位置和尺寸，从而创造出正确的三维效果。这个从虚拟三维空间转换到平面中的显示过程，也常称为投影。</p>
+<h3 id="如何在canvas坐标系中，利用透视来绘制3d"><a href="#如何在canvas坐标系中，利用透视来绘制3d" class="headerlink" title="如何在canvas坐标系中，利用透视来绘制3d?"></a>如何在canvas坐标系中，利用透视来绘制3d?</h3><p><strong>canvas坐标系</strong>：使用W3C坐标系，坐标原点位于浏览器的左上角，沿x轴向右是正值，沿y轴向下是正值；</p>
+<p><img src="/var/folders/9q/y3bdjkjn54vgj2jny187qk2c0000gn/T/abnerworks.Typora/image-20180908153512020.png" alt="image-20180908153512020"></p>
+<p><strong>透视关系</strong></p>
+<p><img src="/var/folders/9q/y3bdjkjn54vgj2jny187qk2c0000gn/T/abnerworks.Typora/image-20180908154033410.png" alt="image-20180908154033410"></p>
+<p>基本思想：随着物体的原理(z坐标增加)，它的大小缩小到0，同时x,y坐标向消失点移动</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">scale = f1 / (f1 + zpos);</div><div class="line">object.scaleX = object.scaleY = scale;</div><div class="line">object.alpha = scale; <span class="comment">// optional</span></div><div class="line">object.x = vanishingPointX + xpos * scale;</div><div class="line">object.y = vanishingPointY + ypos * scale;</div></pre></td></tr></table></figure>
+<p>示例：</p>
+<p><img src="/var/folders/9q/y3bdjkjn54vgj2jny187qk2c0000gn/T/abnerworks.Typora/image-20180908161729898.png" alt="image-20180908161729898"></p>
+<h3 id="简单的3d旋转"><a href="#简单的3d旋转" class="headerlink" title="简单的3d旋转"></a>简单的3d旋转</h3><p>参照css 3d transform坐标系：</p>
+<p><img src="/var/folders/9q/y3bdjkjn54vgj2jny187qk2c0000gn/T/abnerworks.Typora/image-20180908154734767.png" alt="image-20180908154734767"></p>
+<p>（y轴的正轴朝下）</p>
+<p>在处理三维坐标旋转时，使用标准的矩阵旋转公示是沒有问题的。但是把二维坐标旋转调用三次，也能够实现三维坐标的旋转，易读易懂，处理速度也较快。</p>
+<p>三维坐标旋转的二维分解图如下：</p>
+<p><img src="/var/folders/9q/y3bdjkjn54vgj2jny187qk2c0000gn/T/abnerworks.Typora/image-20180908155028467.png" alt="image-20180908155028467"></p>
+<p>其中，一般的二维坐标旋转绕是Z轴旋转，物体只有x、y坐标会变化（风车旋转），三维中还可以绕x和y轴旋转。</p>
+<p>绕x轴旋转：只有y、z坐标会变化（轮胎滚动）。</p>
+<p>绕y轴旋转，只有x，z坐标会变化（唱片机）。</p>
+<p><strong>二维坐标旋转</strong></p>
+<p><img src="/var/folders/9q/y3bdjkjn54vgj2jny187qk2c0000gn/T/abnerworks.Typora/image-20180908155130602.png" alt="image-20180908155130602"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">x1 = (x - x0) * cos(a) - (y - y0) * sin(a) + x0</div><div class="line">y1 = (y - y0) * cos(a) + (x - x0) * sin(a) + y0</div></pre></td></tr></table></figure>
+<p>对应的其他两个轴的旋转公式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 绕x轴旋转</span></div><div class="line">y1 = (y - y0) * cos(a) - (z - z0) * sin(a) + y0</div><div class="line">z1 = (z - z0) * cos(a) + (y - y0) * sin(a) + z0</div><div class="line"></div><div class="line"><span class="comment">// 绕y轴旋转</span></div><div class="line">x1 = (x - x0) * cos(a) - (z - z0) * sin(a) + x0</div><div class="line">z1 = (z - z0) * cos(a) + (x - x0) * sin(a) + z0</div></pre></td></tr></table></figure>
+<p>注：文章研究的初衷是，canvas元素仿css 3d transform，寻找变换后的坐标点；示例不够具体，此处暂不提供；另外相对3d旋转矩阵计算方法来说，本文方法较为初级，且变换时的顺序要与css 旋转顺序一致，需要注意。</p>
+<p>参考文章：</p>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement" target="_blank" rel="external">HTMLCanvasElement</a></li>
+<li><a href="https://www.w3cplus.com/canvas/canvas-coordinate-system.html" target="_blank" rel="external">Canvas学习：Canvas里的坐标系统</a></li>
+<li><a href="https://www.zhangxinxu.com/wordpress/2012/09/css3-3d-transform-perspective-animate-transition/" target="_blank" rel="external">好吧，CSS3 3D transform变换，不过如此！</a></li>
+<li><a href="https://segmentfault.com/a/1190000008871433" target="_blank" rel="external"> Canvas getContext(“3d”)?</a></li>
+<li><a href="http://aicdg.com/html5-animation/mydoc/mydoc_15.7.html" target="_blank" rel="external">坐标旋转</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/canvas/" rel="tag"># canvas</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/18/css-direction-unicode-bidi/" rel="next" title="CSS改变文本书写方向">
+                <i class="fa fa-chevron-left"></i> CSS改变文本书写方向
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/19/heatmap/" rel="prev" title="数据可视化 浅谈热力图如何在前端实现">
+                数据可视化 浅谈热力图如何在前端实现 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div id="sidebar-dimmer"></div>
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://orxxyc255.bkt.clouddn.com/119392108751f1b6b7l.jpg"
+               alt="绵绵" />
+          <p class="site-author-name" itemprop="name">绵绵</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/zhenxin1994/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2676996181" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://music.163.com/#/user/home?id=39777938" target="_blank" title="网易云音乐">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  网易云音乐
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Canvas-3D元素绘制、旋转变换"><span class="nav-number">1.</span> <span class="nav-text">Canvas 3D元素绘制、旋转变换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何在canvas坐标系中，利用透视来绘制3d"><span class="nav-number">1.0.1.</span> <span class="nav-text">如何在canvas坐标系中，利用透视来绘制3d?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单的3d旋转"><span class="nav-number">1.0.2.</span> <span class="nav-text">简单的3d旋转</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">绵绵</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  Hosted by -
+  <a style="font-weight: bold" href="https://pages.coding.me">
+    Coding Pages
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 93191, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 93191, xid: "2018/09/08/canvas 3D transform/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/93191/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("aI0t1lPnhLgCnl5EXasg4GNC-gzGzoHsz", "IQ8F0WUMiXlEFfFqwqjxRGAL");</script>
+  <script>
+    function showTime(Counter) {
+	var query = new AV.Query(Counter);
+	$(".leancloud_visitors").each(function() {
+		var url = $(this).attr("id").trim();
+		query.equalTo("url", url);
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {
+					var content = $(document.getElementById(url)).text() + ': 0';
+					$(document.getElementById(url)).text(content);
+					return;
+				}
+				//删除多余的一重循环，该项循化将当前点击率和之前该文章的错误点击率字符串链接
+				//for (var i = 0; i < results.length; i++) {
+					var object = results[0];
+					var content = $(document.getElementById(url)).text() + ': ' + object.get('time');
+					$(document.getElementById(url)).text(content);
+				//}
+			},
+			error: function(object, error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+	});
+}
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+<!--移动端判断，是否引入背景-->
+<script>
+var browser={  
+    versions:function(){   
+           var u = navigator.userAgent, app = navigator.appVersion;   
+           return {//移动终端浏览器版本信息
+                trident: u.indexOf('Trident') > -1, //IE内核
+                presto: u.indexOf('Presto') > -1, //opera内核
+                webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+                iPad: u.indexOf('iPad') > -1, //是否iPad
+                webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+            };  
+         }(),  
+         language:(navigator.browserLanguage || navigator.language).toLowerCase()  
+}   
+
+  if(browser.versions.mobile || browser.versions.ios || browser.versions.android ||   
+    browser.versions.iPhone || browser.versions.iPad){        
+             
+  }else{
+	//document.write("<script type=\'text/javascript\'  src=\'/js/src/particle.js\'><\/script>");
+  }
+
+</script>
+
+</body>
+</html>
