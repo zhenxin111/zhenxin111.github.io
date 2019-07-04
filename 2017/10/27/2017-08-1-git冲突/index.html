@@ -95,7 +95,7 @@
 <meta property="og:url" content="http://zhenxin1994.com/2017/10/27/2017-08-1-git冲突/index.html">
 <meta property="og:site_name" content="绵绵小站">
 <meta property="og:description" content="原文2017年08月01日生成。文章记录使用git遇到的问题，以及解决方案。">
-<meta property="og:updated_time" content="2017-10-27T07:56:08.000Z">
+<meta property="og:updated_time" content="2019-07-04T08:11:13.536Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git日常使用问题总结">
 <meta name="twitter:description" content="原文2017年08月01日生成。文章记录使用git遇到的问题，以及解决方案。">
@@ -440,11 +440,23 @@
 <p>远程仓库中，存在a文件；<br>本地对a文件内容进行了删除增加修改；<br>git上传后，发现本地以及仓库中的a文件内容是远程仓库版本与本地版本的合并；</p>
 </blockquote>
 <p>多个文件出现此状况，不利于修改；</p>
-<h2 id="本地代码库版本回滚"><a href="#本地代码库版本回滚" class="headerlink" title="本地代码库版本回滚"></a>本地代码库版本回滚</h2><p>发生覆盖等错误时，解决方法为版本回退：<br>日志查看commit操作记录: <code>git log</code><br>版本回滚命令:<code>git reset --hard commit-id</code> <em>commit-id通过个git log命令获得</em></p>
+<h2 id="本地代码库版本回滚"><a href="#本地代码库版本回滚" class="headerlink" title="本地代码库版本回滚"></a>本地代码库版本回滚</h2><p>发生覆盖等错误时，解决方法为版本回退：</p>
+<ul>
+<li>日志查看commit操作记录: <code>git log</code></li>
+<li><p><code>q</code>退出log查看</p>
+</li>
+<li><p>版本回滚命令:<code>git reset --hard commit-id</code> <em>commit-id通过个git log命令获得</em></p>
+</li>
+</ul>
 <h2 id="安装node，使用npm配合hexo出错"><a href="#安装node，使用npm配合hexo出错" class="headerlink" title="安装node，使用npm配合hexo出错"></a>安装node，使用npm配合hexo出错</h2><p>最新node8版本太高报错，退回到版本4.*</p>
 <h2 id="备份hexo博客源码时，出现主题不能上传的情况"><a href="#备份hexo博客源码时，出现主题不能上传的情况" class="headerlink" title="备份hexo博客源码时，出现主题不能上传的情况"></a>备份hexo博客源码时，出现主题不能上传的情况</h2><ul>
 <li>删除根目录和主题目录下的.git文件夹</li>
 <li>修改根目录下的.gitignore文件为：<br><code>/.deploy_git</code><br><code>/public</code></li>
+</ul>
+<h2 id="将a分支上的某次commit，共享到分支b中"><a href="#将a分支上的某次commit，共享到分支b中" class="headerlink" title="将a分支上的某次commit，共享到分支b中"></a>将a分支上的某次commit，共享到分支b中</h2><ul>
+<li>切换到b分支<code>git checkout b</code></li>
+<li>再次提交指定commit<code>git cherry-pick &lt;commit id&gt;</code></li>
+<li>若该次提交出现冲突需要手动解决；</li>
 </ul>
 
       
@@ -661,7 +673,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git上传远程仓库操作"><span class="nav-number">1.</span> <span class="nav-text">git上传远程仓库操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地与远程仓库文件不一致"><span class="nav-number">2.</span> <span class="nav-text">本地与远程仓库文件不一致</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git文件添加："><span class="nav-number">3.</span> <span class="nav-text">git文件添加：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名称太长的文件添加失败"><span class="nav-number">4.</span> <span class="nav-text">名称太长的文件添加失败</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pull冲突"><span class="nav-number">5.</span> <span class="nav-text">pull冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地代码库版本回滚"><span class="nav-number">6.</span> <span class="nav-text">本地代码库版本回滚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装node，使用npm配合hexo出错"><span class="nav-number">7.</span> <span class="nav-text">安装node，使用npm配合hexo出错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备份hexo博客源码时，出现主题不能上传的情况"><span class="nav-number">8.</span> <span class="nav-text">备份hexo博客源码时，出现主题不能上传的情况</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git上传远程仓库操作"><span class="nav-number">1.</span> <span class="nav-text">git上传远程仓库操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地与远程仓库文件不一致"><span class="nav-number">2.</span> <span class="nav-text">本地与远程仓库文件不一致</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git文件添加："><span class="nav-number">3.</span> <span class="nav-text">git文件添加：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名称太长的文件添加失败"><span class="nav-number">4.</span> <span class="nav-text">名称太长的文件添加失败</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pull冲突"><span class="nav-number">5.</span> <span class="nav-text">pull冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地代码库版本回滚"><span class="nav-number">6.</span> <span class="nav-text">本地代码库版本回滚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装node，使用npm配合hexo出错"><span class="nav-number">7.</span> <span class="nav-text">安装node，使用npm配合hexo出错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备份hexo博客源码时，出现主题不能上传的情况"><span class="nav-number">8.</span> <span class="nav-text">备份hexo博客源码时，出现主题不能上传的情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将a分支上的某次commit，共享到分支b中"><span class="nav-number">9.</span> <span class="nav-text">将a分支上的某次commit，共享到分支b中</span></a></li></ol></div>
             
 
           </div>
