@@ -4,8 +4,51 @@
 
     
   <url>
+    <loc>http://zhenxin1994.com/2020/01/07/blog-keep-fresh/</loc>
+    <lastmod>2020-03-30T12:27:40.979Z</lastmod>
+    <data>
+        <display>
+        <title>保持鲜活</title>
+        <pubTime>2020-01-07T12:20:00.000Z</pubTime>
+        
+        <tag>细微末节</tag>
+         
+         
+           
+             
+              <breadCrumb title="细微末节" url="http://zhenxin1994.com/categories/%E7%BB%86%E5%BE%AE%E6%9C%AB%E8%8A%82/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zhenxin1994.com/2019/08/22/css%20vertical%20arrangement%20of%20text/</loc>
+    <lastmod>2019-08-23T07:14:07.000Z</lastmod>
+    <data>
+        <display>
+        <title>css改变文本书写方向（二）</title>
+        <pubTime>2019-08-22T07:20:00.000Z</pubTime>
+        
+        <tag>css</tag>
+         
+         
+           
+             
+              <breadCrumb title="实践" url="http://zhenxin1994.com/categories/%E5%AE%9E%E8%B7%B5/"/>
+          
+             
+              <breadCrumb title="css" url="http://zhenxin1994.com/categories/%E5%AE%9E%E8%B7%B5/css/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://zhenxin1994.com/2017/10/27/2017-08-1-git%E5%86%B2%E7%AA%81/</loc>
-    <lastmod>2019-07-04T08:31:52.727Z</lastmod>
+    <lastmod>2019-07-04T08:31:52.000Z</lastmod>
     <data>
         <display>
         <title>git日常使用问题总结</title>
@@ -28,7 +71,7 @@
     
   <url>
     <loc>http://zhenxin1994.com/2017/07/14/2017-07-14-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2019-07-04T08:25:32.253Z</lastmod>
+    <lastmod>2019-07-04T08:25:32.000Z</lastmod>
     <data>
         <display>
         <title>我的博客搭建日志</title>
@@ -51,7 +94,7 @@
     
   <url>
     <loc>http://zhenxin1994.com/2018/09/08/canvas%203D%20transform/</loc>
-    <lastmod>2019-01-03T03:25:45.267Z</lastmod>
+    <lastmod>2019-01-03T03:25:45.000Z</lastmod>
     <data>
         <display>
         <title>canvas 3D元素、旋转变换</title>
@@ -74,7 +117,7 @@
     
   <url>
     <loc>http://zhenxin1994.com/2018/11/19/heatmap/</loc>
-    <lastmod>2018-12-03T13:12:27.448Z</lastmod>
+    <lastmod>2018-12-03T13:12:27.000Z</lastmod>
     <data>
         <display>
         <title>数据可视化 浅谈热力图如何在前端实现</title>
@@ -99,123 +142,8 @@
 
     
   <url>
-    <loc>http://zhenxin1994.com/2017/07/14/2017-07-14-%E7%BB%98%E7%94%BB/</loc>
-    <lastmod>2018-12-03T12:29:21.682Z</lastmod>
-    <data>
-        <display>
-        <title>绘画练习</title>
-        <pubTime>2017-07-14T14:47:00.000Z</pubTime>
-        
-        <tag>绘画</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/"/>
-          
-             
-              <breadCrumb title="绘画" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/%E7%BB%98%E7%94%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://zhenxin1994.com/2017/12/21/tree-painting/</loc>
-    <lastmod>2018-12-03T12:29:21.682Z</lastmod>
-    <data>
-        <display>
-        <title>树和背影</title>
-        <pubTime>2017-12-21T08:00:00.000Z</pubTime>
-        
-        <tag>绘画</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/"/>
-          
-             
-              <breadCrumb title="绘画" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/%E7%BB%98%E7%94%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://zhenxin1994.com/2017/06/20/2017-06-20-movie-Kang-rinpoche/</loc>
-    <lastmod>2018-12-03T12:29:21.657Z</lastmod>
-    <data>
-        <display>
-        <title>《冈仁波齐》</title>
-        <pubTime>2017-06-20T14:23:58.000Z</pubTime>
-        
-        <tag>观影</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/"/>
-          
-             
-              <breadCrumb title="观影" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/%E8%A7%82%E5%BD%B1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://zhenxin1994.com/2017/08/20/Babel-movie/</loc>
-    <lastmod>2018-12-03T12:29:21.650Z</lastmod>
-    <data>
-        <display>
-        <title>《通天塔》 暗夜中的光亮</title>
-        <pubTime>2017-08-20T14:00:00.000Z</pubTime>
-        
-        <tag>观影</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/"/>
-          
-             
-              <breadCrumb title="观影" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/%E8%A7%82%E5%BD%B1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://zhenxin1994.com/2017/09/20/phpstudy-sqlserver/</loc>
-    <lastmod>2018-12-03T12:29:21.650Z</lastmod>
-    <data>
-        <display>
-        <title>phpstudy连接SQL Server 2008数据库中遇见的坑</title>
-        <pubTime>2017-09-20T08:01:00.000Z</pubTime>
-        
-        <tag>php</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习" url="http://zhenxin1994.com/categories/%E5%AD%A6%E4%B9%A0/"/>
-          
-             
-              <breadCrumb title="php" url="http://zhenxin1994.com/categories/%E5%AD%A6%E4%B9%A0/php/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://zhenxin1994.com/2017/08/24/Garden-painting/</loc>
-    <lastmod>2018-12-03T12:29:21.650Z</lastmod>
+    <lastmod>2018-12-03T12:29:21.000Z</lastmod>
     <data>
         <display>
         <title>风景画练习</title>
@@ -237,22 +165,22 @@
 
     
   <url>
-    <loc>http://zhenxin1994.com/2017/08/15/Plant-painting/</loc>
-    <lastmod>2018-12-03T12:29:21.650Z</lastmod>
+    <loc>http://zhenxin1994.com/2017/09/20/phpstudy-sqlserver/</loc>
+    <lastmod>2018-12-03T12:29:21.000Z</lastmod>
     <data>
         <display>
-        <title>单枝植物</title>
-        <pubTime>2017-08-15T08:15:00.000Z</pubTime>
+        <title>phpstudy连接SQL Server 2008数据库中遇见的坑</title>
+        <pubTime>2017-09-20T08:01:00.000Z</pubTime>
         
-        <tag>绘画</tag>
+        <tag>php</tag>
          
          
            
              
-              <breadCrumb title="生活" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/"/>
+              <breadCrumb title="学习" url="http://zhenxin1994.com/categories/%E5%AD%A6%E4%B9%A0/"/>
           
              
-              <breadCrumb title="绘画" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/%E7%BB%98%E7%94%BB/"/>
+              <breadCrumb title="php" url="http://zhenxin1994.com/categories/%E5%AD%A6%E4%B9%A0/php/"/>
           
         </display>
     </data>
@@ -261,7 +189,7 @@
     
   <url>
     <loc>http://zhenxin1994.com/2017/06/13/2017-06-13-%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%B5%8B%E5%80%BC%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2018-12-03T12:29:21.649Z</lastmod>
+    <lastmod>2018-12-03T12:29:21.000Z</lastmod>
     <data>
         <display>
         <title>引用类型的赋值问题</title>
@@ -285,8 +213,123 @@
 
     
   <url>
+    <loc>http://zhenxin1994.com/2017/06/20/2017-06-20-movie-Kang-rinpoche/</loc>
+    <lastmod>2018-12-03T12:29:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>《冈仁波齐》</title>
+        <pubTime>2017-06-20T14:23:58.000Z</pubTime>
+        
+        <tag>观影</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/"/>
+          
+             
+              <breadCrumb title="观影" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/%E8%A7%82%E5%BD%B1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zhenxin1994.com/2017/12/21/tree-painting/</loc>
+    <lastmod>2018-12-03T12:29:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>树和背影</title>
+        <pubTime>2017-12-21T08:00:00.000Z</pubTime>
+        
+        <tag>绘画</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/"/>
+          
+             
+              <breadCrumb title="绘画" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/%E7%BB%98%E7%94%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zhenxin1994.com/2017/07/14/2017-07-14-%E7%BB%98%E7%94%BB/</loc>
+    <lastmod>2018-12-03T12:29:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>绘画练习</title>
+        <pubTime>2017-07-14T14:47:00.000Z</pubTime>
+        
+        <tag>绘画</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/"/>
+          
+             
+              <breadCrumb title="绘画" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/%E7%BB%98%E7%94%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zhenxin1994.com/2017/08/20/Babel-movie/</loc>
+    <lastmod>2018-12-03T12:29:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>《通天塔》 暗夜中的光亮</title>
+        <pubTime>2017-08-20T14:00:00.000Z</pubTime>
+        
+        <tag>观影</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/"/>
+          
+             
+              <breadCrumb title="观影" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/%E8%A7%82%E5%BD%B1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zhenxin1994.com/2017/08/15/Plant-painting/</loc>
+    <lastmod>2018-12-03T12:29:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>单枝植物</title>
+        <pubTime>2017-08-15T08:15:00.000Z</pubTime>
+        
+        <tag>绘画</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/"/>
+          
+             
+              <breadCrumb title="绘画" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/%E7%BB%98%E7%94%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://zhenxin1994.com/2017/03/04/2017-03-04-PHP%E4%B8%AD%E9%80%9A%E8%BF%87sqlsrv%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E2%80%94%E2%80%94%E6%88%90%E7%BB%A9%E6%8E%92%E5%90%8D%E5%8E%BB%E9%99%A4%E9%87%8D%E5%A4%8D%E5%AD%97%E6%AE%B5%E7%9A%84%E6%95%B0%E6%8D%AE%E8%A1%8C/</loc>
-    <lastmod>2018-12-03T12:24:30.764Z</lastmod>
+    <lastmod>2018-12-03T12:24:30.000Z</lastmod>
     <data>
         <display>
         <title>PHP中通过sqlsrv调用存储过程——成绩排名去除重复字段的数据行</title>
@@ -311,7 +354,7 @@
     
   <url>
     <loc>http://zhenxin1994.com/2018/01/18/css-direction-unicode-bidi/</loc>
-    <lastmod>2018-07-10T05:17:21.895Z</lastmod>
+    <lastmod>2018-07-10T05:17:21.000Z</lastmod>
     <data>
         <display>
         <title>CSS改变文本书写方向</title>
@@ -520,14 +563,16 @@
 
     
   <url>
-    <loc>http://zhenxin1994.com/2017/06/16/2017-06-16-css-image-zoom/</loc>
+    <loc>http://zhenxin1994.com/2017/06/24/2017-06-24-sqlServer-union-table/</loc>
     <lastmod>2017-08-05T12:30:06.000Z</lastmod>
     <data>
         <display>
-        <title>图片的响应式缩放且自动裁剪</title>
-        <pubTime>2017-06-16T14:23:58.000Z</pubTime>
+        <title>SQL Server 合并两个结构不同的表</title>
+        <pubTime>2017-06-24T14:23:58.000Z</pubTime>
         
-        <tag>CSS</tag>
+        <tag>存储过程</tag>
+         
+        <tag>sql语句</tag>
          
          
            
@@ -535,7 +580,7 @@
               <breadCrumb title="技术" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/"/>
           
              
-              <breadCrumb title="CSS" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
+              <breadCrumb title="SQL语句" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/SQL%E8%AF%AD%E5%8F%A5/"/>
           
         </display>
     </data>
@@ -568,24 +613,22 @@
 
     
   <url>
-    <loc>http://zhenxin1994.com/2017/06/24/2017-06-24-sqlServer-union-table/</loc>
+    <loc>http://zhenxin1994.com/2017/07/16/2017-07-16-%E4%BA%BA%E7%9A%84%E4%B8%89%E4%BD%8D%E4%B8%80%E4%BD%93%E7%9A%84%E7%96%91%E9%97%AE/</loc>
     <lastmod>2017-08-05T12:30:06.000Z</lastmod>
     <data>
         <display>
-        <title>SQL Server 合并两个结构不同的表</title>
-        <pubTime>2017-06-24T14:23:58.000Z</pubTime>
+        <title>人的三位一体的疑问</title>
+        <pubTime>2017-07-16T15:39:00.000Z</pubTime>
         
-        <tag>存储过程</tag>
-         
-        <tag>sql语句</tag>
+        <tag>疑问</tag>
          
          
            
              
-              <breadCrumb title="技术" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="生活" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/"/>
           
              
-              <breadCrumb title="SQL语句" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/SQL%E8%AF%AD%E5%8F%A5/"/>
+              <breadCrumb title="自问" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/%E8%87%AA%E9%97%AE/"/>
           
         </display>
     </data>
@@ -618,16 +661,14 @@
 
     
   <url>
-    <loc>http://zhenxin1994.com/2015/10/29/2015-10-29-current-index/</loc>
+    <loc>http://zhenxin1994.com/2017/06/16/2017-06-16-css-image-zoom/</loc>
     <lastmod>2017-08-05T12:30:06.000Z</lastmod>
     <data>
         <display>
-        <title>对动态导航进行当前页面的标识的解决办法</title>
-        <pubTime>2015-10-29T14:11:00.000Z</pubTime>
+        <title>图片的响应式缩放且自动裁剪</title>
+        <pubTime>2017-06-16T14:23:58.000Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
-        <tag>ASPCMS</tag>
+        <tag>CSS</tag>
          
          
            
@@ -635,30 +676,7 @@
               <breadCrumb title="技术" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/"/>
           
              
-              <breadCrumb title="ASPCMS" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/ASPCMS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://zhenxin1994.com/2017/07/11/2017-07-11-lyric/</loc>
-    <lastmod>2017-08-05T12:30:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>鲜活</title>
-        <pubTime>2017-07-11T07:59:00.000Z</pubTime>
-        
-        <tag>歌词</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/"/>
-          
-             
-              <breadCrumb title="音乐" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/%E9%9F%B3%E4%B9%90/"/>
+              <breadCrumb title="CSS" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
           
         </display>
     </data>
@@ -711,17 +729,42 @@
     </url>
 
     
-    
-    
   <url>
-    <loc>http://zhenxin1994.com/2017/07/16/2017-07-16-%E4%BA%BA%E7%9A%84%E4%B8%89%E4%BD%8D%E4%B8%80%E4%BD%93%E7%9A%84%E7%96%91%E9%97%AE/</loc>
+    <loc>http://zhenxin1994.com/2015/10/29/2015-10-29-current-index/</loc>
     <lastmod>2017-08-05T12:30:06.000Z</lastmod>
     <data>
         <display>
-        <title>人的三位一体的疑问</title>
-        <pubTime>2017-07-16T15:39:00.000Z</pubTime>
+        <title>对动态导航进行当前页面的标识的解决办法</title>
+        <pubTime>2015-10-29T14:11:00.000Z</pubTime>
         
-        <tag>疑问</tag>
+        <tag>JavaScript</tag>
+         
+        <tag>ASPCMS</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="ASPCMS" url="http://zhenxin1994.com/categories/%E6%8A%80%E6%9C%AF/ASPCMS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>http://zhenxin1994.com/2017/07/11/2017-07-11-lyric/</loc>
+    <lastmod>2017-08-05T12:30:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>鲜活</title>
+        <pubTime>2017-07-11T07:59:00.000Z</pubTime>
+        
+        <tag>歌词</tag>
          
          
            
@@ -729,7 +772,7 @@
               <breadCrumb title="生活" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/"/>
           
              
-              <breadCrumb title="自问" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/%E8%87%AA%E9%97%AE/"/>
+              <breadCrumb title="音乐" url="http://zhenxin1994.com/categories/%E7%94%9F%E6%B4%BB/%E9%9F%B3%E4%B9%90/"/>
           
         </display>
     </data>
