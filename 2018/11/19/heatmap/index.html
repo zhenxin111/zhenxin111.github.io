@@ -1,0 +1,1002 @@
+
+
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="baidu-site-verification" content="I2eChOe9wp" />
+<meta name="google-site-verification" content="sY5e6xdbtkjVo-txKShkrbMGa6yIVAEd3MJGP3I8nn4" />
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="在公司写了篇关于介绍热力图实现原理的文章，也算一段时间学习的积累，放链接： 数据可视化：浅谈热力图如何在前端实现 - 知乎 https://zhuanlan.zhihu.com/p/49929203">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据可视化 浅谈热力图如何在前端实现">
+<meta property="og:url" content="http://zhenxin1994.com/2018/11/19/heatmap/index.html">
+<meta property="og:site_name" content="真言真语">
+<meta property="og:description" content="在公司写了篇关于介绍热力图实现原理的文章，也算一段时间学习的积累，放链接： 数据可视化：浅谈热力图如何在前端实现 - 知乎 https://zhuanlan.zhihu.com/p/49929203">
+<meta property="og:image" content="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/WX20181203-204612.png">
+<meta property="og:image" content="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/v2-da7dc91e78c8d4881d84f45098ec976a_hd.jpg">
+<meta property="og:image" content="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/WX20181203-205317.png">
+<meta property="og:image" content="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/WX20181203-205536.png">
+<meta property="og:image" content="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/v2-4c6449fbb659c7024960d827c0a982a4_hd.jpg">
+<meta property="og:image" content="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/WX20181203-204612.png">
+<meta property="og:updated_time" content="2018-12-03T13:12:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据可视化 浅谈热力图如何在前端实现">
+<meta name="twitter:description" content="在公司写了篇关于介绍热力图实现原理的文章，也算一段时间学习的积累，放链接： 数据可视化：浅谈热力图如何在前端实现 - 知乎 https://zhuanlan.zhihu.com/p/49929203">
+<meta name="twitter:image" content="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/WX20181203-204612.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhenxin1994.com/2018/11/19/heatmap/"/>
+
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+  <title>数据可视化 浅谈热力图如何在前端实现 | 真言真语</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?62be3d1dfbd8a41c563b6f20848ace84";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <!--<span class="logo-line-before"><i></i></span>-->
+        <span class="site-title">真言真语</span>
+        <!--<span class="logo-line-after"><i></i></span>-->
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhenxin1994.com/2018/11/19/heatmap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhenzhen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://orxxyc255.bkt.clouddn.com/119392108751f1b6b7l.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="真言真语">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据可视化 浅谈热力图如何在前端实现</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-19T15:20:00+08:00">
+                2018-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/JavaScript/数据可视化/" itemprop="url" rel="index">
+                    <span itemprop="name">数据可视化</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/19/heatmap/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/11/19/heatmap/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2018/11/19/heatmap/" class="leancloud_visitors" data-flag-title="数据可视化 浅谈热力图如何在前端实现">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><p>在公司写了篇关于介绍热力图实现原理的文章，也算一段时间学习的积累，放链接：</p>
+<p>数据可视化：浅谈热力图如何在前端实现 - 知乎</p>
+<p><a href="https://zhuanlan.zhihu.com/p/49929203" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/49929203</a></p>
+<a id="more"></a>
+<p>当我们需要用更直观有效的形式来展现各类大数据信息时，热力图无疑是一种很好的方式。作为一种密度图，热力图一般使用具备显著颜色差异的方式来呈现数据效果，热力图中亮色一般代表事件发生频率较高或事物分布密度较大，暗色则反之。值得一提的是，热力图最终效果常常优于离散点的直接显示，可以在二维平面或者地图上直观地展现空间数据的疏密程度或频率高低。</p>
+<p>那么制作一张完整的热力图，需要前端做哪些工作呢？接下来，我将基于自己在工作过程中的实践，为大家详细解析热力图在前端的实现过程。</p>
+<p>首先给大家看一张完整的热力图实现效果图：</p>
+<p><img src="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/WX20181203-204612.png" alt="image"></p>
+<p><strong>关于热力图的实现原理：</strong></p>
+<p>一般可大致归纳为以下几个步骤：</p>
+<p>1.为每个数据点设置一个从中心向外灰度渐变的圆；</p>
+<p>2.利用灰度可以叠加的原理，计算每个像素点数据交叉叠加得到的灰度值；</p>
+<p>3.根据每个像素计算得到的灰度值，在一条彩色色带中进行颜色映射，最后对图像进行着色，得到热力图。</p>
+<p>当热力图基于前端技术的具体实现时，又可分为以下四个步骤，接下来为大家详细解析：</p>
+<p>1.准备热力图数据格式</p>
+<p>由于热力图使用场景一般为地图，所以，数据源需要提供经纬度作为位置信息，以及count作为数据点的权重值。具体数据格式示例如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[&#123;</div><div class="line">  <span class="attr">lat</span>: <span class="string">'36.123026258681'</span>,</div><div class="line">  <span class="attr">lng</span>: <span class="string">'106.352062717014'</span>,</div><div class="line">  <span class="attr">count</span>: <span class="number">29293</span></div><div class="line">&#125;,</div><div class="line">&#123;</div><div class="line">  <span class="attr">lat</span>: <span class="string">'37.002255316841'</span>,</div><div class="line">  <span class="attr">lng</span>: <span class="string">'103.185955946181'</span>,</div><div class="line">  <span class="attr">count</span>: <span class="number">44356</span></div><div class="line">&#125;,</div><div class="line">...</div><div class="line">]</div></pre></td></tr></table></figure>
+<p>2.数据填充到地图上</p>
+<p>基于canvas绘制热力图，其中热力图每个数据点的半径大小会直接影响到热力图展现效果，一般要结合使用地图的缩放级别以及数据精度来进行设置，本示例默认设为15px。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> radius = <span class="number">15</span></div><div class="line"><span class="keyword">let</span> context = <span class="keyword">this</span>.getContext()</div><div class="line">points.forEach(<span class="function"><span class="params">point</span> =&gt;</span> &#123;</div><div class="line">  context.beginPath()</div><div class="line">  context.arc(point[<span class="number">0</span>], point[<span class="number">1</span>], radius, <span class="number">0</span>, <span class="built_in">Math</span>.PI * <span class="number">2</span>, <span class="literal">true</span>) <span class="comment">// 绘制一个圆</span></div><div class="line">  <span class="keyword">let</span> gradient = context.createRadialGradient(point[<span class="number">0</span>], point[<span class="number">1</span>], <span class="number">0</span>, point[<span class="number">0</span>], point[<span class="number">1</span>], radius) <span class="comment">// 创建一条放射渐变</span></div><div class="line">  gradient.addColorStop(<span class="number">0</span>, <span class="string">'rgba(0,0,0,1)'</span>)</div><div class="line">  gradient.addColorStop(<span class="number">1</span>, <span class="string">'rgba(0,0,0,0)'</span>)</div><div class="line">  context.fillStyle = gradient </div><div class="line">  context.closePath()</div><div class="line">  context.fill()</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>上述步骤画出的每个点的样式如下图，是一个由内向外放射渐变的灰色圆：</p>
+<p><img src="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/v2-da7dc91e78c8d4881d84f45098ec976a_hd.jpg" alt="image"></p>
+<p>所有点叠加在地图上的效果如下图所示：</p>
+<p><img src="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/WX20181203-205317.png" alt="image"></p>
+<ol>
+<li>叠加显示，权重（密度）算法</li>
+</ol>
+<p>上面的绘制结果，没有使用到权重值，这样每个数据点圆中心点的灰度值都是1，不能直接用于颜色映射。根据离散点缓冲区的叠加来确定热力分布密度。每一个热点都有一个位置和权重，权重越大，则该点越显著，也就代表其渐变的一个衰变因素。我们需要根据不同的count设置出不同的alpha值。本文根据count最小值对应alpha0，最大值对应1的映射计算方式，求得每个数据点绘制的alpha：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alpha = (point[<span class="number">2</span>] - minCount) / (maxCount - minCount)</div></pre></td></tr></table></figure>
+<p>结合上一步骤，在canvas中完整的绘制方式如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> radius = <span class="number">15</span>;</div><div class="line"><span class="keyword">let</span> context = <span class="keyword">this</span>.getContext()</div><div class="line">points.forEach(<span class="function"><span class="params">point</span> =&gt;</span> &#123;</div><div class="line">  context.beginPath()</div><div class="line">  <span class="keyword">let</span> alpha = (point[<span class="number">2</span>] - minCount) / (maxCount - minCount) <span class="comment">// 根据权重count计算出当前点的alpha</span></div><div class="line">  alpha = alpha &gt; <span class="number">1</span> ? <span class="number">1</span> : alpha</div><div class="line">  context.globalAlpha = alpha <span class="comment">// 设置 Alpha 透明度</span></div><div class="line">  context.arc(point[<span class="number">0</span>], point[<span class="number">1</span>], radius, <span class="number">0</span>, <span class="built_in">Math</span>.PI * <span class="number">2</span>, <span class="literal">true</span>)</div><div class="line">  <span class="keyword">let</span> gradient = context.createRadialGradient(point[<span class="number">0</span>], point[<span class="number">1</span>], <span class="number">0</span>, point[<span class="number">0</span>], point[<span class="number">1</span>], radius)</div><div class="line">  gradient.addColorStop(<span class="number">0</span>, <span class="string">'rgba(0,0,0,1)'</span>)</div><div class="line">  gradient.addColorStop(<span class="number">1</span>, <span class="string">'rgba(0,0,0,0)'</span>)</div><div class="line">  context.fillStyle = gradient </div><div class="line">  context.closePath()</div><div class="line">  context.fill()</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>绘制效果如下所示，从实例图的对比可以看出一个好的权重映射方法对热力图的显示效果起着重要作用。</p>
+<p><img src="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/WX20181203-205536.png" alt="image"></p>
+<p>4.颜色映射</p>
+<p>最后根据画布上每个像素点的累计得到的灰度值，从彩色映射色带中得到对应位置的颜色。</p>
+<p>如何得到画布上每个像素点信息？可以使用canvas提供的getImageData()方法，返回 ImageData 对象，该对象拷贝了画布指定矩形的像素数据。ImageData对象中的每个像素，都包含RGBA四项信息：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// RGBA的值范围</span></div><div class="line">R - 红色 (<span class="number">0</span><span class="number">-255</span>)</div><div class="line">G - 绿色 (<span class="number">0</span><span class="number">-255</span>)</div><div class="line">B - 蓝色 (<span class="number">0</span><span class="number">-255</span>)</div><div class="line">A - alpha 通道 (<span class="number">0</span><span class="number">-255</span>; <span class="number">0</span> 是透明的，<span class="number">255</span> 是完全可见的)</div><div class="line"></div><div class="line"><span class="comment">// ImageData对象示例</span></div><div class="line">ImageData:&#123;</div><div class="line">    <span class="attr">width</span>: <span class="number">200</span>, </div><div class="line">    <span class="attr">height</span>: <span class="number">200</span>,</div><div class="line">    <span class="attr">data</span>:[<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">128</span>,<span class="number">255</span>,<span class="number">128</span>,....] <span class="comment">// 其中每四项分别对应一个像素点的RGBA值</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>相对应的通过canvas提供的putImageData()方法，将像素级的数据放回到画布中。</p>
+<p>在热力图绘制过程中，利用这两个方法，可以从上一步骤绘制得到的热力图中得到每个像素点叠加得到的alpha通道的灰度值(0~255)，再建立一条长度为256px彩色色带，从中映射得到该像素点的对应颜色的RGB值。</p>
+<p>建立一条长度为256px彩虹条的过程如下代码所示：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getColorPaint</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> paletteCanvas = <span class="built_in">document</span>.createElement(<span class="string">'canvas'</span>)</div><div class="line">  <span class="keyword">let</span> paletteCtx = paletteCanvas.getContext(<span class="string">'2d'</span>)</div><div class="line">  <span class="keyword">let</span> gradientConfig = &#123; <span class="comment">// 自定义颜色</span></div><div class="line">    <span class="string">'0.2'</span>: <span class="string">'rgba(0,0,255,0.2)'</span>,</div><div class="line">    <span class="string">'0.3'</span>: <span class="string">'rgba(43,111,231,0.3)'</span>,</div><div class="line">    <span class="string">'0.4'</span>: <span class="string">'rgba(2,192,241,0.4)'</span>,</div><div class="line">    <span class="string">'0.6'</span>: <span class="string">'rgba(44,222,148,0.6)'</span>,</div><div class="line">    <span class="string">'0.8'</span>: <span class="string">'rgba(254,237,83,0.8)'</span>,</div><div class="line">    <span class="string">'0.9'</span>: <span class="string">'rgba(255,118,50,0.9)'</span>,</div><div class="line">    <span class="string">'1.0'</span>: <span class="string">'rgba(255,64,28,1)'</span></div><div class="line">  &#125;</div><div class="line">  paletteCanvas.width = <span class="number">256</span></div><div class="line">  paletteCanvas.height = <span class="number">1</span></div><div class="line">  <span class="keyword">let</span> gradient = paletteCtx.createLinearGradient(<span class="number">0</span>, <span class="number">0</span>, <span class="number">256</span>, <span class="number">1</span>) <span class="comment">// 创建一个长256px的线性渐变条</span></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> gradientConfig) &#123;</div><div class="line">    gradient.addColorStop(key, gradientConfig[key])</div><div class="line">  &#125;</div><div class="line">  paletteCtx.fillStyle = gradient</div><div class="line">  paletteCtx.fillRect(<span class="number">0</span>, <span class="number">0</span>, <span class="number">256</span>, <span class="number">1</span>)</div><div class="line">  <span class="keyword">return</span> paletteCtx.getImageData(<span class="number">0</span>, <span class="number">0</span>, <span class="number">256</span>, <span class="number">1</span>).data</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>自定义颜色得到的彩色条：</p>
+<p><img src="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/v2-4c6449fbb659c7024960d827c0a982a4_hd.jpg" alt="image"></p>
+<p>从彩虹条中映射颜色的过程如下代码所示：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> palette = getColorPaint()</div><div class="line"><span class="keyword">let</span> img = context.getImageData(<span class="number">0</span>, <span class="number">0</span>, <span class="keyword">this</span>.option[<span class="string">'real-width'</span>], <span class="keyword">this</span>.option[<span class="string">'real-height'</span>])</div><div class="line"><span class="keyword">let</span> imgData = img.data</div><div class="line"><span class="keyword">let</span> len = imgData.length</div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">3</span>; i &lt; len; i += <span class="number">4</span>) &#123;</div><div class="line">  <span class="keyword">let</span> alpha = imgData[i]</div><div class="line">  <span class="keyword">let</span> offset = alpha * <span class="number">4</span></div><div class="line">  <span class="keyword">if</span> (!offset) &#123;</div><div class="line">    <span class="keyword">continue</span></div><div class="line">  &#125;</div><div class="line">  <span class="comment">// 映射颜色RGB值</span></div><div class="line">  imgData[i - <span class="number">3</span>] = palette[offset]</div><div class="line">  imgData[i - <span class="number">2</span>] = palette[offset + <span class="number">1</span>]</div><div class="line">  imgData[i - <span class="number">1</span>] = palette[offset + <span class="number">2</span>]</div><div class="line">&#125;</div><div class="line">context.putImageData(img, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="keyword">this</span>.option[<span class="string">'real-width'</span>], <span class="keyword">this</span>.option[<span class="string">'real-height'</span>])</div></pre></td></tr></table></figure>
+<p>最终，我们得到的热力图效果如下：</p>
+<p><img src="https://zhenxin1994-1258208600.cos.ap-chengdu.myqcloud.com/WX20181203-204612.png" alt="image"></p>
+<p>最后，提供一个热力图的性能优化方法，由于热力图一次性加载过多的点，会出现卡顿性能问题。而前端在渲染热力图时，可以进行热力图的点聚合优化。点聚合的思路是，将视窗划分成为网格进行，判断热力图数据点在网格中所处的位置，如果同时几个点处于一个网格，则合并这几个点，以此降低渲染成本。</p>
+<p>判断每个点在网格中分布位置：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">findGridinfo</span> (<span class="params">viewPort, mapbox, interval, point</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> clientW = viewPort.width;</div><div class="line">  <span class="keyword">let</span> clientH = viewPort.height;</div><div class="line">  <span class="keyword">let</span> lngRange = mapbox[<span class="number">2</span>] - mapbox[<span class="number">0</span>];</div><div class="line">  <span class="keyword">let</span> latRange = mapbox[<span class="number">3</span>] - mapbox[<span class="number">1</span>];<span class="comment">// 每个格子的经纬差</span></div><div class="line">  <span class="keyword">let</span> xNum = <span class="built_in">Math</span>.floor(clientW / interval) + <span class="number">1</span>;</div><div class="line">  <span class="keyword">let</span> yNum = <span class="built_in">Math</span>.floor(clientH / interval) + <span class="number">1</span>;</div><div class="line">  <span class="keyword">let</span> gridLng = lngRange / xNum;</div><div class="line">  <span class="keyword">let</span> gridLat = latRange / yNum;</div><div class="line">  <span class="keyword">let</span> x = <span class="built_in">Math</span>.floor((point[<span class="number">0</span>] - mapbox[<span class="number">0</span>]) / gridLng);</div><div class="line">  <span class="keyword">let</span> y = <span class="built_in">Math</span>.floor((point[<span class="number">1</span>] - mapbox[<span class="number">1</span>]) / gridLat);</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">idx</span>: (y - <span class="number">1</span>) * xNum + x,</div><div class="line">    <span class="attr">minmax</span>: [</div><div class="line">      mapbox[<span class="number">0</span>] + gridLng * x,</div><div class="line">      mapbox[<span class="number">1</span>] + gridLat * y,</div><div class="line">      mapbox[<span class="number">0</span>] + gridLng * (x + <span class="number">1</span>),</div><div class="line">      mapbox[<span class="number">1</span>] + gridLat * (y + <span class="number">1</span>)</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>网格划分以及点和聚合方法如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">heatmapPoly</span> (<span class="params">viewPort, mapbox, datas, interval = <span class="number">5</span></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> clientW = viewPort.width;</div><div class="line">  <span class="keyword">let</span> clientH = viewPort.height; <span class="comment">// 可视窗口像素宽高</span></div><div class="line">  <span class="keyword">let</span> xNum = <span class="built_in">Math</span>.floor(clientW / interval) + <span class="number">1</span>;</div><div class="line">  <span class="keyword">let</span> yNum = <span class="built_in">Math</span>.floor(clientH / interval) + <span class="number">1</span>; <span class="comment">// 格子数</span></div><div class="line">  <span class="keyword">let</span> mapDataGrid = <span class="keyword">new</span> <span class="built_in">Array</span>(xNum * yNum);</div><div class="line">  </div><div class="line">  datas.data.forEach(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">let</span> point = data.subject.split(<span class="string">','</span>);</div><div class="line">    <span class="keyword">let</span> gridinfo = findGridinfo(viewPort, mapbox, interval, point);</div><div class="line">    <span class="keyword">let</span> idx = gridinfo.idx;</div><div class="line">    <span class="keyword">let</span> minmax = gridinfo.minmax;</div><div class="line">    <span class="keyword">let</span> centerPoint = [(minmax[<span class="number">0</span>] + minmax[<span class="number">2</span>]) / <span class="number">2</span>, (minmax[<span class="number">1</span>] + minmax[<span class="number">3</span>]) / <span class="number">2</span>];</div><div class="line">    mapDataGrid[idx] = mapDataGrid[idx] || &#123;<span class="attr">subject</span>: <span class="string">''</span>, <span class="attr">value</span>: <span class="number">0</span>&#125;;</div><div class="line">    mapDataGrid[idx].subject = mapDataGrid[idx].subject || centerPoint.join(<span class="string">','</span>);</div><div class="line">    mapDataGrid[idx].value += data.value;</div><div class="line">  &#125;)</div><div class="line">  <span class="keyword">return</span> mapDataGrid.filter(<span class="function"><span class="params">data</span> =&gt;</span> !!data.value)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>参考文章：</p>
+<blockquote>
+<p><a href="https://blog.csdn.net/little_reddy/article/details/53542807" target="_blank" rel="external">ArcGIS desktop——“热力图”实现方法比较</a></p>
+<p> <a href="https://www.cnblogs.com/fuckgiser/p/6424099.html" target="_blank" rel="external">数据可视化之热力图</a></p>
+<p><a href="http://liongg.lofter.com/post/56afa_135d4ae" target="_blank" rel="external">热点图简介 Heat Map Hotspot Map</a></p>
+<p><a href="http://blog.talkingdata.net/?p=4948" target="_blank" rel="external">你不知道的前端算法之热力图的实现</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/08/canvas 3D transform/" rel="next" title="canvas 3D元素、旋转变换">
+                <i class="fa fa-chevron-left"></i> canvas 3D元素、旋转变换
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/22/css vertical arrangement of text/" rel="prev" title="css改变文本书写方向（二）">
+                css改变文本书写方向（二） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div id="sidebar-dimmer"></div>
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://orxxyc255.bkt.clouddn.com/119392108751f1b6b7l.jpg"
+               alt="zhenzhen" />
+          <p class="site-author-name" itemprop="name">zhenzhen</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/zhenxin1994/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2676996181" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://music.163.com/#/user/home?id=39777938" target="_blank" title="网易云音乐">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  网易云音乐
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhenzhen</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  Hosted by -
+  <a style="font-weight: bold" href="https://pages.coding.me">
+    Coding Pages
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 93191, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 93191, xid: "2018/11/19/heatmap/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/93191/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("aI0t1lPnhLgCnl5EXasg4GNC-gzGzoHsz", "IQ8F0WUMiXlEFfFqwqjxRGAL");</script>
+  <script>
+    function showTime(Counter) {
+	var query = new AV.Query(Counter);
+	$(".leancloud_visitors").each(function() {
+		var url = $(this).attr("id").trim();
+		query.equalTo("url", url);
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {
+					var content = $(document.getElementById(url)).text() + ': 0';
+					$(document.getElementById(url)).text(content);
+					return;
+				}
+				//删除多余的一重循环，该项循化将当前点击率和之前该文章的错误点击率字符串链接
+				//for (var i = 0; i < results.length; i++) {
+					var object = results[0];
+					var content = $(document.getElementById(url)).text() + ': ' + object.get('time');
+					$(document.getElementById(url)).text(content);
+				//}
+			},
+			error: function(object, error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+	});
+}
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+<!--移动端判断，是否引入背景-->
+<script>
+var browser={  
+    versions:function(){   
+           var u = navigator.userAgent, app = navigator.appVersion;   
+           return {//移动终端浏览器版本信息
+                trident: u.indexOf('Trident') > -1, //IE内核
+                presto: u.indexOf('Presto') > -1, //opera内核
+                webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+                iPad: u.indexOf('iPad') > -1, //是否iPad
+                webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+            };  
+         }(),  
+         language:(navigator.browserLanguage || navigator.language).toLowerCase()  
+}   
+
+  if(browser.versions.mobile || browser.versions.ios || browser.versions.android ||   
+    browser.versions.iPhone || browser.versions.iPad){        
+             
+  }else{
+	//document.write("<script type=\'text/javascript\'  src=\'/js/src/particle.js\'><\/script>");
+  }
+
+</script>
+
+</body>
+</html>

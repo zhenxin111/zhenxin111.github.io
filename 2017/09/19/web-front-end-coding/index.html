@@ -1,0 +1,1193 @@
+
+
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="baidu-site-verification" content="I2eChOe9wp" />
+<meta name="google-site-verification" content="sY5e6xdbtkjVo-txKShkrbMGa6yIVAEd3MJGP3I8nn4" />
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="常见排序算法的JS实现">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端知识编程题整理">
+<meta property="og:url" content="http://zhenxin1994.com/2017/09/19/web-front-end-coding/index.html">
+<meta property="og:site_name" content="真言真语">
+<meta property="og:description" content="常见排序算法的JS实现">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2016/11/29/4abde1748817d7f35f2bf8b6a058aa40?imageView2/0/w/1280/h/960">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2016/11/29/b93d9288a682f5538667fb1fa4c65220?imageView2/0/w/1280/h/960">
+<meta property="og:updated_time" content="2017-10-26T13:11:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端知识编程题整理">
+<meta name="twitter:description" content="常见排序算法的JS实现">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2016/11/29/4abde1748817d7f35f2bf8b6a058aa40?imageView2/0/w/1280/h/960">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhenxin1994.com/2017/09/19/web-front-end-coding/"/>
+
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+  <title>前端知识编程题整理 | 真言真语</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?62be3d1dfbd8a41c563b6f20848ace84";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <!--<span class="logo-line-before"><i></i></span>-->
+        <span class="site-title">真言真语</span>
+        <!--<span class="logo-line-after"><i></i></span>-->
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhenxin1994.com/2017/09/19/web-front-end-coding/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhenzhen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://orxxyc255.bkt.clouddn.com/119392108751f1b6b7l.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="真言真语">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端知识编程题整理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-19T15:20:00+08:00">
+                2017-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/19/web-front-end-coding/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/09/19/web-front-end-coding/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2017/09/19/web-front-end-coding/" class="leancloud_visitors" data-flag-title="前端知识编程题整理">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><h1 id="常见排序算法的JS实现"><a href="#常见排序算法的JS实现" class="headerlink" title="常见排序算法的JS实现"></a>常见排序算法的JS实现</h1><a id="more"></a>
+<p>排序算法图片总结(图片来源于网络):</p>
+<p>排序对比：<br><img src="https://user-gold-cdn.xitu.io/2016/11/29/4abde1748817d7f35f2bf8b6a058aa40?imageView2/0/w/1280/h/960" alt="image"></p>
+<p>排序分类：<br><img src="https://user-gold-cdn.xitu.io/2016/11/29/b93d9288a682f5538667fb1fa4c65220?imageView2/0/w/1280/h/960" alt="image"></p>
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>每一趟结束都能确定一个元素的最终位置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> bubbleSort = <span class="function"><span class="keyword">function</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">	</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;arr.length<span class="number">-1</span>-i;j++)&#123;</div><div class="line">			<span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>])&#123;</div><div class="line">				temp = arr[j];</div><div class="line">				arr[j]=arr[j+<span class="number">1</span>];</div><div class="line">				arr[j+<span class="number">1</span>]=temp;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="快速排序实现"><a href="#快速排序实现" class="headerlink" title="快速排序实现"></a>快速排序实现</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> quickSort = <span class="function"><span class="keyword">function</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(arr.length &lt;= <span class="number">1</span>)</div><div class="line">		<span class="keyword">return</span> arr;</div><div class="line">		</div><div class="line">	<span class="keyword">var</span> pivotIndex = <span class="built_in">Math</span>.flood(arr.length/<span class="number">2</span>);</div><div class="line">	<span class="keyword">var</span> pivot = arr.splice(pivotIndex)[<span class="number">0</span>];                <span class="comment">//通过数组的splice方法删除该基准数</span></div><div class="line">	<span class="keyword">var</span> left =[];</div><div class="line">	<span class="keyword">var</span> right = [];</div><div class="line">	</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;arr.length; i++)&#123;</div><div class="line">		<span class="keyword">if</span>(arr[i] &lt; pivot)&#123;</div><div class="line">			left.push(arr[i]);</div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			right.push(arr[i]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="keyword">return</span> quickSort(left).concat([pivot],quickSort(right));   <span class="comment">//递归形式不断重复划分基准左右两边的数组，直到剩下一个元素；</span></div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="前端技能编程"><a href="#前端技能编程" class="headerlink" title="前端技能编程"></a>前端技能编程</h1><h2 id="根据包名，在指定空间中创建对象"><a href="#根据包名，在指定空间中创建对象" class="headerlink" title="根据包名，在指定空间中创建对象"></a>根据包名，在指定空间中创建对象</h2><p>输入描述:</p>
+<blockquote>
+<p>namespace({a: {test: 1, b: 2}}, ‘a.b.c.d’)</p>
+</blockquote>
+<p>输出描述:</p>
+<blockquote>
+<p>{a: {test: 1, b: {c: {d: {}}}}}</p>
+</blockquote>
+<p>通过代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">namespace</span>(<span class="params">oNamespace, sPackage</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> arr = sPackage.split(<span class="string">"."</span>); <span class="comment">//拆分输入字符串</span></div><div class="line">    <span class="keyword">var</span> oName = oNamespace;        <span class="comment">//引用类型的赋值，使得oName相当于指针，方便操作；</span></div><div class="line">    </div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123; </div><div class="line">	<span class="comment">//判断对象是否已包含该属性，可以使用in操作符或者hasOwnProperty方法，区别在于in判断有无该属性，而hasOwnProperty()方法判断该属性是否来自对象实例，是的话true;</span></div><div class="line">        <span class="keyword">if</span>(oName.hasOwnProperty(arr[i]) )&#123;      </div><div class="line">            <span class="keyword">if</span>(<span class="keyword">typeof</span> oName[arr[i]] !== <span class="string">'object'</span>)&#123;   <span class="comment">//如果该属性不是对象，将此属性设为空对象    </span></div><div class="line">                oName[arr[i]] = &#123;&#125;;</div><div class="line">            &#125;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            oName[arr[i]] = &#123;&#125;;     <span class="comment">// 属性不在对象中或者是原型链上属性时，建立此属性设为空对象</span></div><div class="line">        &#125;</div><div class="line">        oName = oName[arr[i]];      <span class="comment">//指向下一层</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> oNamespace;              <span class="comment">//返回对象</span></div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="字符串字符统计"><a href="#字符串字符统计" class="headerlink" title="字符串字符统计"></a>字符串字符统计</h2><p>题目描述</p>
+<blockquote>
+<p>统计字符串中每个字符的出现频率，返回一个 Object，key 为统计字符，value 为出现频率</p>
+<ol>
+<li>不限制 key 的顺序</li>
+<li>输入的字符串参数不会为空</li>
+<li>忽略空白字符</li>
+</ol>
+</blockquote>
+<p>示例1<br>输入</p>
+<blockquote>
+<p>‘hello world’</p>
+</blockquote>
+<p>输出</p>
+<blockquote>
+<p>{h: 1, e: 1, l: 3, o: 2, w: 1, r: 1, d: 1}</p>
+</blockquote>
+<p>通过代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">count</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> obj = &#123;&#125;;                            <span class="comment">//创建对象，利用对象的属性检测方法方便操作</span></div><div class="line">	</div><div class="line">	<span class="comment">//字符串去除空格，/S为非空字符，g是全局；也可以使用str.replace(/\s/g,'')</span></div><div class="line">    <span class="keyword">var</span> str1 = str.match(<span class="regexp">/\S/g</span>);             </div><div class="line">    </div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j =<span class="number">0</span> ; j&lt;str1.length; j++)&#123;         </div><div class="line">        <span class="keyword">if</span>(obj.hasOwnProperty(str1[j]))&#123;      <span class="comment">//去重统计操作</span></div><div class="line">            obj[str1[j]]++;                   <span class="comment">//此处只能使用方括号表示法，不能使用点表示法？</span></div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            obj[str1[j]]=<span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">     </div><div class="line">    <span class="keyword">return</span> obj;</div><div class="line">&#125;</div><div class="line"><span class="string">`</span></div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h2><p>题目描述</p>
+<blockquote>
+<p>为 Array 对象添加一个去除重复项的方法</p>
+</blockquote>
+<p>示例1<br>输入</p>
+<blockquote>
+<p>[false, true, undefined, null, NaN, 0, 1, {}, {}, ‘a’, ‘a’, NaN]</p>
+</blockquote>
+<p>输出</p>
+<blockquote>
+<p>[false, true, undefined, null, NaN, 0, 1, {}, {}, ‘a’]</p>
+</blockquote>
+<p>通过代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Array</span>.prototype.uniq = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </div><div class="line">    <span class="keyword">var</span> flag = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.length;i++)&#123;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>[i] !== <span class="keyword">this</span>[i] &amp;&amp; <span class="keyword">typeof</span> <span class="keyword">this</span>[i] != <span class="string">'object'</span>)&#123;     <span class="comment">//找出NaN，并做下标记；此处的&#123;&#125;!==&#123;&#125; 值为true</span></div><div class="line">            flag = <span class="literal">true</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j=i+<span class="number">1</span>;j&lt;<span class="keyword">this</span>.length;)&#123;</div><div class="line">            </div><div class="line">            <span class="keyword">if</span>(<span class="keyword">this</span>[i] === <span class="keyword">this</span>[j] || (flag &amp;&amp; <span class="keyword">this</span>[j] !== <span class="keyword">this</span>[j]))&#123;   <span class="comment">//找到相同的项,使用splice方法剔除</span></div><div class="line">                <span class="keyword">this</span>.splice(j,<span class="number">1</span>);</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                j++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>或者利用辅助数组的indexOf方法，减少空间复杂度<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Array</span>.prototype.uniq = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> flag = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">var</span> arr=[];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.length;i++)&#123;</div><div class="line">        <span class="keyword">if</span>(arr.indexOf(<span class="keyword">this</span>[i]) == <span class="number">-1</span>)&#123;           <span class="comment">//查找元素在数组中的位置信息，没找到或者不能严格相等(===)的值返回-1</span></div><div class="line">            <span class="keyword">if</span>(<span class="keyword">this</span>[i] !== <span class="keyword">this</span>[i])&#123;         <span class="comment">//找到NaN的情况</span></div><div class="line">                <span class="keyword">if</span>(!flag)&#123;</div><div class="line">                    arr.push(<span class="keyword">this</span>[i]);</div><div class="line">                    flag = <span class="literal">true</span>;</div><div class="line">                &#125;</div><div class="line">                </div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                arr.push(<span class="keyword">this</span>[i]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>以上都是两层循环，下面利用散列表：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"> <span class="built_in">Array</span>.prototype.unique = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"> <span class="keyword">var</span> hash = &#123;&#125;, result = [], type = <span class="string">''</span>, item;</div><div class="line"></div><div class="line"> <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) &#123;</div><div class="line">	 item = <span class="keyword">this</span>[i];</div><div class="line">	 type = <span class="built_in">Object</span>.prototype.toString.call(item);</div><div class="line">	 </div><div class="line">	 <span class="keyword">if</span> ( !hash[item + type] ) &#123;</div><div class="line">		 hash[item + type] = <span class="literal">true</span>;</div><div class="line">		 result.push(item);</div><div class="line">	 &#125;</div><div class="line"></div><div class="line"> &#125;</div><div class="line"> <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="获取字符串长度"><a href="#获取字符串长度" class="headerlink" title="获取字符串长度"></a>获取字符串长度</h2><p>题目描述</p>
+<blockquote>
+<p>如果第二个参数 bUnicode255For1 === true，则所有字符长度为 1<br>否则如果字符 Unicode 编码 &gt; 255 则长度为 2</p>
+</blockquote>
+<p>示例1<br>输入</p>
+<blockquote>
+<p>‘hello world, 牛客’, false</p>
+</blockquote>
+<p>输出</p>
+<blockquote>
+<p>17</p>
+</blockquote>
+<p>通过代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">strLength</span>(<span class="params">s, bUnicode255For1</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> len =s.length;</div><div class="line">    <span class="keyword">if</span>(bUnicode255For1 )&#123;</div><div class="line">        <span class="keyword">return</span> s.length;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;s.length;i++)&#123;</div><div class="line">            <span class="keyword">if</span>(s.charCodeAt(i) &gt; <span class="number">255</span>)&#123;           <span class="comment">//charCodeAt()方法可返回指定位置的字符的 Unicode 编码。这个返回值是 0 - 65535 之间的整数</span></div><div class="line">                len++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> len;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="DOM节点查找"><a href="#DOM节点查找" class="headerlink" title="DOM节点查找"></a>DOM节点查找</h2><p>题目描述</p>
+<blockquote>
+<p>查找两个节点的最近的一个共同父节点，可以包括节点自身</p>
+</blockquote>
+<p>输入描述:</p>
+<blockquote>
+<p>oNode1 和 oNode2 在同一文档中，且不会为相同的节点</p>
+</blockquote>
+<p>通过代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">commonParentNode</span>(<span class="params">oNode1, oNode2</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(oNode1.parentNode == oNode2)&#123;</div><div class="line">            <span class="keyword">return</span> oNode2;</div><div class="line">        &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">for</span>(;oNode1;oNode1=oNode1.parentNode)&#123;</div><div class="line">        <span class="keyword">if</span>(oNode1.contains(oNode2))&#123;             <span class="comment">//利用节点的contains()方法，查找有无此后代节点</span></div><div class="line">            <span class="keyword">return</span> oNode1;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="修改this指向"><a href="#修改this指向" class="headerlink" title="修改this指向"></a>修改this指向</h2><p>题目描述</p>
+<blockquote>
+<p>封装函数 f，使 f 的 this 指向指定的对象</p>
+</blockquote>
+<p>示例1<br>输入</p>
+<blockquote>
+<p>无</p>
+</blockquote>
+<p>输出</p>
+<blockquote>
+<p>无</p>
+</blockquote>
+<p>通过代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bindThis</span>(<span class="params">f, oTarget</span>) </span>&#123;</div><div class="line">   <span class="keyword">return</span> f.bind(oTarget);       <span class="comment">//bind 是返回对应函数，便于稍后调用；apply 、call 则是立即调用 </span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>或<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bindThis</span>(<span class="params">f, oTarget</span>) </span>&#123;</div><div class="line">   <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">       <span class="keyword">return</span> f.apply(oTarget,<span class="built_in">arguments</span>);    <span class="comment">//由于参数个数不确定，在此使用apply()比call()方法更合适</span></div><div class="line">   &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="移除数组中的元素（删除特定值，不改原数组）"><a href="#移除数组中的元素（删除特定值，不改原数组）" class="headerlink" title="移除数组中的元素（删除特定值，不改原数组）"></a>移除数组中的元素（删除特定值，不改原数组）</h2><p>题目描述</p>
+<blockquote>
+<p>移除数组 arr 中的所有值与 item 相等的元素。不要直接修改数组 arr，结果返回新的数组</p>
+</blockquote>
+<p>示例1<br>输入</p>
+<blockquote>
+<p>[1, 2, 3, 4, 2], 2</p>
+</blockquote>
+<p>输出</p>
+<blockquote>
+<p>[1, 3, 4]</p>
+</blockquote>
+<p>通过代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">remove</span>(<span class="params">arr, item</span>) </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">if</span>(<span class="built_in">Object</span>.prototype.toString.call(arr) !== <span class="string">'[object Array]'</span>)&#123;  <span class="comment">//检测输入参数是否为数组</span></div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(arr.length &lt; <span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr.filter(<span class="function"><span class="keyword">function</span>(<span class="params">element</span>)</span>&#123;          <span class="comment">//利用数组的filter()方法过筛选符合回调函数的数组元素，返回一个新数组</span></div><div class="line">        <span class="keyword">return</span> element !== item;</div><div class="line">    &#125;);</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="移除数组中的元素（删除特定值，直接改）"><a href="#移除数组中的元素（删除特定值，直接改）" class="headerlink" title="移除数组中的元素（删除特定值，直接改）"></a>移除数组中的元素（删除特定值，直接改）</h2><p>题目描述</p>
+<blockquote>
+<p>移除数组 arr 中的所有值与 item 相等的元素，直接在给定的 arr 数组上进行操作，并将结果返回</p>
+</blockquote>
+<p>示例1<br>输入</p>
+<blockquote>
+<p>[1, 2, 2, 3, 4, 2, 2], 2</p>
+</blockquote>
+<p>输出</p>
+<blockquote>
+<p>[1, 3, 4]</p>
+</blockquote>
+<p>通过代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeWithoutCopy</span>(<span class="params">arr, item</span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span>(<span class="built_in">Object</span>.prototype.toString.call(arr) !== <span class="string">'[object Array]'</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(arr.length == <span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">return</span> arr;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//利用递归实现</span></div><div class="line">    <span class="keyword">if</span>(arr.indexOf(item) == <span class="number">-1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> arr;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        arr.splice(arr.indexOf(item),<span class="number">1</span>);     <span class="comment">//利用数组的indexOf检测出存在位置，再利用splice方法（参数一为删除位置，参数二为删除数量）删除</span></div><div class="line">        removeWithoutCopy(arr,item);  <span class="comment">//把改动后的数组递归，继续利用indexOf()方法检测</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="添加元素（在数组末尾添加，不改原数组）"><a href="#添加元素（在数组末尾添加，不改原数组）" class="headerlink" title="添加元素（在数组末尾添加，不改原数组）"></a>添加元素（在数组末尾添加，不改原数组）</h2><p>题目描述</p>
+<blockquote>
+<p>在数组 arr 末尾添加元素 item。不要直接修改数组 arr，结果返回新的数组</p>
+</blockquote>
+<p>示例1<br>输入</p>
+<blockquote>
+<p>[1, 2, 3, 4],  10</p>
+</blockquote>
+<p>输出</p>
+<blockquote>
+<p>[1, 2, 3, 4, 10]</p>
+</blockquote>
+<p>通过代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">append</span>(<span class="params">arr, item</span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span>(<span class="built_in">Object</span>.prototype.toString.call(arr) !== <span class="string">'[object Array]'</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">var</span> a =[];</div><div class="line">    </div><div class="line">    <span class="keyword">if</span>(<span class="built_in">Array</span>.prototype.copyWithin)&#123;          <span class="comment">//copyWithin()方法检测,部分浏览器不支持</span></div><div class="line">        a = arr.copyWithin();                <span class="comment">//copyWithin()方法浅拷贝数组对象，生成返回新数组</span></div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;       <span class="comment">//不支持copyWithin()方法时，迭代实现</span></div><div class="line">            a.push(arr[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    a.push(item);     <span class="comment">//在数组尾部插入元素，使用push()方法</span></div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="删除数组最后一个元素（返回新数组，多种方式实现）"><a href="#删除数组最后一个元素（返回新数组，多种方式实现）" class="headerlink" title="删除数组最后一个元素（返回新数组，多种方式实现）"></a>删除数组最后一个元素（返回新数组，多种方式实现）</h2><p>题目描述</p>
+<blockquote>
+<p>删除数组 arr 最后一个元素。不要直接修改数组 arr，结果返回新的数组</p>
+</blockquote>
+<p>示例1<br>输入</p>
+<blockquote>
+<p>[1, 2, 3, 4]</p>
+</blockquote>
+<p>输出</p>
+<blockquote>
+<p>[1, 2, 3]</p>
+</blockquote>
+<p>通过代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">truncate</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span>(<span class="built_in">Object</span>.prototype.toString.call(arr) !== <span class="string">'[object Array]'</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">if</span>(arr.length == <span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">//push    简单迭代</span></div><div class="line">    <span class="keyword">var</span> a=[];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;arr.length<span class="number">-1</span>;i++)&#123;</div><div class="line">        a.push(arr[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">    </div><div class="line">    <span class="comment">//slice               //浅拷贝</span></div><div class="line">    <span class="keyword">return</span> arr.slice(<span class="number">0</span>,<span class="number">-1</span>);</div><div class="line">    </div><div class="line">    <span class="comment">//concat              //连接数组，为空时返回新的数组（浅拷贝）</span></div><div class="line">    <span class="keyword">var</span> a=[];</div><div class="line">    a = arr.concat();</div><div class="line">    a.pop();</div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">    </div><div class="line">    <span class="comment">//filter               返回符合条件的项的新数组</span></div><div class="line">    <span class="keyword">return</span> arr.filter(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> e!=arr[arr.length<span class="number">-1</span>];</div><div class="line">    &#125;);</div><div class="line">    </div><div class="line">    <span class="comment">//push.apply+pop       利用apply()方法参数传递</span></div><div class="line">    <span class="keyword">var</span> a=[];</div><div class="line">    a.push.apply(a,arr);</div><div class="line">    a.pop();</div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">    </div><div class="line">	<span class="comment">//join()+split()+pop()  依据join特有的不会改变原数组的特性，但是输出的数组变成字符串数组</span></div><div class="line">    <span class="keyword">var</span> a=arr.join(<span class="string">''</span>).split(<span class="string">''</span>);</div><div class="line">    a.pop();</div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">    </div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="添加元素（返回新数组，多种方式实现）"><a href="#添加元素（返回新数组，多种方式实现）" class="headerlink" title="添加元素（返回新数组，多种方式实现）"></a>添加元素（返回新数组，多种方式实现）</h2><p>题目描述</p>
+<blockquote>
+<p>在数组 arr 开头添加元素 item。不要直接修改数组 arr，结果返回新的数组</p>
+</blockquote>
+<p>示例1<br>输入</p>
+<blockquote>
+<p>[1, 2, 3, 4], 10</p>
+</blockquote>
+<p>输出</p>
+<blockquote>
+<p>[10, 1, 2, 3, 4]</p>
+</blockquote>
+<p>通过代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">prepend</span>(<span class="params">arr, item</span>) </span>&#123;</div><div class="line">	<span class="comment">//数组类型检测</span></div><div class="line">    </div><div class="line">	<span class="comment">//apply()方法</span></div><div class="line">    <span class="comment">//var a =[];</span></div><div class="line">    <span class="comment">//a.push.apply(a,arr);</span></div><div class="line">    <span class="comment">//a.unshift(item);</span></div><div class="line">    <span class="comment">//return a;</span></div><div class="line">    </div><div class="line">	<span class="comment">//slice()方法</span></div><div class="line">    <span class="comment">//var a = arr.slice();</span></div><div class="line">    <span class="comment">//a.unshift(item);</span></div><div class="line">    <span class="comment">//return a;</span></div><div class="line">    </div><div class="line">	<span class="comment">//filter()方法</span></div><div class="line">    <span class="comment">//var a = [];</span></div><div class="line">    <span class="comment">//a = arr.filter(function(e)&#123;</span></div><div class="line">    <span class="comment">//    return true;</span></div><div class="line">    <span class="comment">//&#125;);</span></div><div class="line">    <span class="comment">//a.unshift(item);</span></div><div class="line">    <span class="comment">//return a;</span></div><div class="line">    </div><div class="line">	<span class="comment">//concat()方法</span></div><div class="line">    <span class="keyword">var</span> a =arr.concat();</div><div class="line">    a.unshift(item);</div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">    </div><div class="line">    <span class="comment">//或者迭代</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="查找重复元素"><a href="#查找重复元素" class="headerlink" title="查找重复元素"></a>查找重复元素</h2><p>题目描述</p>
+<blockquote>
+<p>找出数组 arr 中重复出现过的元素</p>
+</blockquote>
+<p>示例1<br>输入</p>
+<blockquote>
+<p>[1, 2, 4, 4, 3, 3, 1, 5, 3]</p>
+</blockquote>
+<p>输出</p>
+<blockquote>
+<p>[1, 3, 4]</p>
+</blockquote>
+<p>通过代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">duplicates</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> a =[];</div><div class="line">    arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;                <span class="comment">//通过forEach()方法对每项元素检查</span></div><div class="line">        <span class="keyword">if</span>(arr.indexOf(e) != arr.lastIndexOf(e) &amp;&amp; a.indexOf(e) == <span class="number">-1</span>)&#123;   <span class="comment">//巧用indexOf()与lastIndexOf()方法，虽然查找方向不同，但返回的都是从左到右元素所在的位置，不等时说明有重复项；再利用indexOf()判断新数组中是否有该元素；没有则添加</span></div><div class="line">            a.push(e);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> a.sort();         <span class="comment">//由于所给示例有排序，此处使用sort()方法</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="查找元素位置"><a href="#查找元素位置" class="headerlink" title="查找元素位置"></a>查找元素位置</h2><p>题目描述</p>
+<blockquote>
+<p>在数组 arr 中，查找值与 item 相等的元素出现的所有位置</p>
+</blockquote>
+<p>示例1<br>输入</p>
+<blockquote>
+<p>‘abcdefabc’</p>
+</blockquote>
+<p>输出</p>
+<blockquote>
+<p>[0, 6]</p>
+</blockquote>
+<p>通过代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">findAllOccurrences</span>(<span class="params">arr, target</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> result=[];</div><div class="line">    arr.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> item===target&amp;&amp;result.push(index);   <span class="comment">//在对每项元素的检查操作中，将位置信息放进新数组</span></div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="正确的函数定义"><a href="#正确的函数定义" class="headerlink" title="正确的函数定义"></a>正确的函数定义</h2><p>题目描述</p>
+<blockquote>
+<p>请修复给定的 js 代码中，函数定义存在的问题</p>
+</blockquote>
+<p>示例1<br>输入</p>
+<blockquote>
+<p>true</p>
+</blockquote>
+<p>输出</p>
+<blockquote>
+<p>a</p>
+</blockquote>
+<p>原错误代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">functions</span>(<span class="params">flag</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (flag) &#123;</div><div class="line">      <span class="function"><span class="keyword">function</span> <span class="title">getValue</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="string">'a'</span>; &#125;    <span class="comment">//函数声明不能放在if语句中，else内的函数总是覆盖if中的函数</span></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="function"><span class="keyword">function</span> <span class="title">getValue</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="string">'b'</span>; &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> getValue();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>通过代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">functions</span>(<span class="params">flag</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (flag) &#123;</div><div class="line">      <span class="keyword">var</span> getValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="string">'a'</span>; &#125;  <span class="comment">//利用函数表达式的方式修正错误</span></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">var</span> getValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="string">'b'</span>; &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> getValue();</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="计时器"><a href="#计时器" class="headerlink" title="计时器"></a>计时器</h2><p>题目描述</p>
+<blockquote>
+<p>实现一个打点计时器，要求<br>1、从 start 到 end（包含 start 和 end），每隔 100 毫秒 console.log 一个数字，每次数字增幅为 1<br>2、返回的对象中需要包含一个 cancel 方法，用于停止定时操作<br>3、第一个数需要立即输出</p>
+</blockquote>
+<p>通过代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">count</span>(<span class="params">start, end</span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span>(start &lt;= end)&#123;</div><div class="line">        <span class="built_in">console</span>.log(start++);</div><div class="line">        t = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;count(start,end)&#125;,<span class="number">100</span>);   <span class="comment">//通过setTimeout()方法，定时执行函数</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">cancel</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">            clearTimeout(t);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>或者使用<code>setInterval()</code>方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">count</span>(<span class="params">start, end</span>) </span>&#123;</div><div class="line">    </div><div class="line">	<span class="built_in">console</span>.log(start++);</div><div class="line">	</div><div class="line">    <span class="keyword">var</span> t = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;      </div><div class="line">        <span class="keyword">if</span>(start &lt;= end)&#123;</div><div class="line">            <span class="built_in">console</span>.log(start++);</div><div class="line">        &#125;</div><div class="line">    &#125;,<span class="number">100</span>);</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">cancel</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">            clearTimeout(t);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>setTimeout()和setInterval()方法的差别：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">// 其他代码</span></div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        run();</div><div class="line">    &#125;, <span class="number">10000</span>);</div><div class="line">&#125;</div><div class="line">run();</div></pre></td></tr></table></figure></p>
+<p>setTimeout()方法执行时间由“其他代码决定”，实际执行时间是其他代码执行时间 与 10s 的最大值；</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    run();</div><div class="line">&#125;, <span class="number">10000</span>);</div></pre></td></tr></table></figure>
+<p>而setInterval, 不会有上面的问题, 但是如果run()的执行时间, 操作大于10s, 那么甚至可能跳过任务；</p>
+<h2 id="二次封装函数"><a href="#二次封装函数" class="headerlink" title="二次封装函数"></a>二次封装函数</h2><p>题目描述</p>
+<blockquote>
+<p>实现函数 partialUsingArguments，调用之后满足如下条件：<br>1、返回一个函数 result<br>2、调用 result 之后，返回的结果与调用函数 fn 的结果一致<br>3、fn 的调用参数为 partialUsingArguments 的第一个参数之后的全部参数以及 result 的调用参数</p>
+</blockquote>
+<p>示例1<br>输入</p>
+<blockquote>
+<p>无</p>
+</blockquote>
+<p>输出</p>
+<blockquote>
+<p>无</p>
+</blockquote>
+<p>通过代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">partialUsingArguments</span>(<span class="params">fn</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> arr = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>); <span class="comment">//因为要保留partialUsingArguments函数参数的第一项以后参数，需要使用数组操作方法，故需要转换为数组</span></div><div class="line">    arr.shift();</div><div class="line">    <span class="keyword">var</span> result = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    	<span class="keyword">return</span> fn.apply(<span class="keyword">this</span>,arr.concat([].slice.call(<span class="built_in">arguments</span>)));   <span class="comment">// 合并partialUsingArguments 函数的第一个参数之后的全部参数以及 result 的调用参数</span></div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="柯里化"><a href="#柯里化" class="headerlink" title="柯里化"></a>柯里化</h2><p>题目描述</p>
+<blockquote>
+<p>已知 fn 为一个预定义函数，实现函数 curryIt，调用之后满足如下条件：<br>1、返回一个函数 a，a 的 length 属性值为 1（即显式声明 a 接收一个参数）<br>2、调用 a 之后，返回一个函数 b, b 的 length 属性值为 1<br>3、调用 b 之后，返回一个函数 c, c 的 length 属性值为 1<br>4、调用 c 之后，返回的结果与调用 fn 的返回值一致<br>5、fn 的参数依次为函数 a, b, c 的调用参数</p>
+</blockquote>
+<p>示例1<br>输入</p>
+<blockquote>
+<p>var fn = function (a, b, c) {return a + b + c}; curryIt(fn)(1)(2)(3);</p>
+</blockquote>
+<p>输出</p>
+<blockquote>
+<p>6</p>
+</blockquote>
+<p>通过代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//柯里化是把接受多个参数的函数变换成接受一个单一参数(最初函数的第一个参数)的函数，并且返回接受余下的参数且返回结果的新函数的技术。</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">curryIt</span>(<span class="params">fn</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> len = fn.length;</div><div class="line">    <span class="keyword">var</span> args = [];</div><div class="line">    </div><div class="line">    <span class="keyword">var</span> result = <span class="function"><span class="keyword">function</span>(<span class="params">arg</span>)</span>&#123;</div><div class="line">        args.push(arg);</div><div class="line">        len--;</div><div class="line">        </div><div class="line">        <span class="keyword">if</span>(len &lt;=<span class="number">0</span>)&#123;</div><div class="line">            <span class="keyword">return</span> fn.apply(<span class="keyword">this</span>,args);</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> result;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/24/Garden-painting/" rel="next" title="风景画练习">
+                <i class="fa fa-chevron-left"></i> 风景画练习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/20/phpstudy-sqlserver/" rel="prev" title="phpstudy连接SQL Server 2008数据库中遇见的坑">
+                phpstudy连接SQL Server 2008数据库中遇见的坑 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div id="sidebar-dimmer"></div>
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://orxxyc255.bkt.clouddn.com/119392108751f1b6b7l.jpg"
+               alt="zhenzhen" />
+          <p class="site-author-name" itemprop="name">zhenzhen</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/zhenxin1994/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2676996181" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://music.163.com/#/user/home?id=39777938" target="_blank" title="网易云音乐">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  网易云音乐
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常见排序算法的JS实现"><span class="nav-number">1.</span> <span class="nav-text">常见排序算法的JS实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.1.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速排序实现"><span class="nav-number">1.2.</span> <span class="nav-text">快速排序实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前端技能编程"><span class="nav-number">2.</span> <span class="nav-text">前端技能编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#根据包名，在指定空间中创建对象"><span class="nav-number">2.1.</span> <span class="nav-text">根据包名，在指定空间中创建对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串字符统计"><span class="nav-number">2.2.</span> <span class="nav-text">字符串字符统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组去重"><span class="nav-number">2.3.</span> <span class="nav-text">数组去重</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取字符串长度"><span class="nav-number">2.4.</span> <span class="nav-text">获取字符串长度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM节点查找"><span class="nav-number">2.5.</span> <span class="nav-text">DOM节点查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改this指向"><span class="nav-number">2.6.</span> <span class="nav-text">修改this指向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移除数组中的元素（删除特定值，不改原数组）"><span class="nav-number">2.7.</span> <span class="nav-text">移除数组中的元素（删除特定值，不改原数组）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移除数组中的元素（删除特定值，直接改）"><span class="nav-number">2.8.</span> <span class="nav-text">移除数组中的元素（删除特定值，直接改）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加元素（在数组末尾添加，不改原数组）"><span class="nav-number">2.9.</span> <span class="nav-text">添加元素（在数组末尾添加，不改原数组）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除数组最后一个元素（返回新数组，多种方式实现）"><span class="nav-number">2.10.</span> <span class="nav-text">删除数组最后一个元素（返回新数组，多种方式实现）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加元素（返回新数组，多种方式实现）"><span class="nav-number">2.11.</span> <span class="nav-text">添加元素（返回新数组，多种方式实现）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找重复元素"><span class="nav-number">2.12.</span> <span class="nav-text">查找重复元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找元素位置"><span class="nav-number">2.13.</span> <span class="nav-text">查找元素位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正确的函数定义"><span class="nav-number">2.14.</span> <span class="nav-text">正确的函数定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计时器"><span class="nav-number">2.15.</span> <span class="nav-text">计时器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二次封装函数"><span class="nav-number">2.16.</span> <span class="nav-text">二次封装函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#柯里化"><span class="nav-number">2.17.</span> <span class="nav-text">柯里化</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhenzhen</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  Hosted by -
+  <a style="font-weight: bold" href="https://pages.coding.me">
+    Coding Pages
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 93191, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 93191, xid: "2017/09/19/web-front-end-coding/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/93191/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("aI0t1lPnhLgCnl5EXasg4GNC-gzGzoHsz", "IQ8F0WUMiXlEFfFqwqjxRGAL");</script>
+  <script>
+    function showTime(Counter) {
+	var query = new AV.Query(Counter);
+	$(".leancloud_visitors").each(function() {
+		var url = $(this).attr("id").trim();
+		query.equalTo("url", url);
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {
+					var content = $(document.getElementById(url)).text() + ': 0';
+					$(document.getElementById(url)).text(content);
+					return;
+				}
+				//删除多余的一重循环，该项循化将当前点击率和之前该文章的错误点击率字符串链接
+				//for (var i = 0; i < results.length; i++) {
+					var object = results[0];
+					var content = $(document.getElementById(url)).text() + ': ' + object.get('time');
+					$(document.getElementById(url)).text(content);
+				//}
+			},
+			error: function(object, error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+	});
+}
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+<!--移动端判断，是否引入背景-->
+<script>
+var browser={  
+    versions:function(){   
+           var u = navigator.userAgent, app = navigator.appVersion;   
+           return {//移动终端浏览器版本信息
+                trident: u.indexOf('Trident') > -1, //IE内核
+                presto: u.indexOf('Presto') > -1, //opera内核
+                webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+                iPad: u.indexOf('iPad') > -1, //是否iPad
+                webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+            };  
+         }(),  
+         language:(navigator.browserLanguage || navigator.language).toLowerCase()  
+}   
+
+  if(browser.versions.mobile || browser.versions.ios || browser.versions.android ||   
+    browser.versions.iPhone || browser.versions.iPad){        
+             
+  }else{
+	//document.write("<script type=\'text/javascript\'  src=\'/js/src/particle.js\'><\/script>");
+  }
+
+</script>
+
+</body>
+</html>
